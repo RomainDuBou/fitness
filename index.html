@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitLife - Transformez Votre Corps</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+      }
+
+      body {
+        background: #ffffff;
+        overflow-x: hidden;
+      }
+
+      .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+
+      .gradient-text {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+      }
+
+      .btn-primary::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+
+      .btn-primary:hover::before {
+        left: 100%;
+      }
+
+      .card {
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        background: white;
+        border: 1px solid #f0f0f0;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+      }
+
+      .image-overlay {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .image-overlay::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(102, 126, 234, 0.8) 0%,
+          rgba(118, 75, 162, 0.8) 100%
+        );
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+
+      .image-overlay:hover::after {
+        opacity: 1;
+      }
+
+      .section-divider {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #e0e0e0, transparent);
+        margin: 80px 0;
+      }
+
+      .floating-badge {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      nav {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid #f0f0f0;
+        transition: all 0.3s ease;
+      }
+
+      nav.scrolled {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .stat-item {
+        border-right: 1px solid #e0e0e0;
+      }
+
+      .stat-item:last-child {
+        border-right: none;
+      }
+
+      .recipe-card {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+      }
+
+      .recipe-card img {
+        transition: transform 0.5s ease;
+      }
+
+      .recipe-card:hover img {
+        transform: scale(1.1);
+      }
+
+      .program-badge {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .testimonial {
+        background: linear-gradient(135deg, #f8f9ff 0%, #f0f0ff 100%);
+      }
+
+      .wave-divider {
+        position: relative;
+        height: 100px;
+        background: #f9fafb;
+      }
+
+      .wave-divider svg {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 100px;
+      }
+
+      .hero-image {
+        position: relative;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+      }
+
+      @media (max-width: 768px) {
+        .stat-item {
+          border-right: none;
+          border-bottom: 1px solid #e0e0e0;
+        }
+        .stat-item:last-child {
+          border-bottom: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50" id="navbar">
+      <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <div class="text-2xl font-bold gradient-text">
+            <i class="fas fa-dumbbell mr-2"></i>FitLife
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#accueil"
+              class="text-gray-700 hover:text-purple-600 transition font-medium"
+              >Accueil</a
+            >
+            <a
+              href="#exercices"
+              class="text-gray-700 hover:text-purple-600 transition font-medium"
+              >Exercices</a
+            >
+            <a
+              href="#programmes"
+              class="text-gray-700 hover:text-purple-600 transition font-medium"
+              >Programmes</a
+            >
+            <a
+              href="#recettes"
+              class="text-gray-700 hover:text-purple-600 transition font-medium"
+              >Recettes</a
+            >
+            <button
+              class="btn-primary text-white px-6 py-2 rounded-full font-semibold"
+            >
+              Commencer
+            </button>
+          </div>
+          <button class="md:hidden text-gray-700 text-2xl">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="pt-32 pb-20 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="fade-in">
+            <div class="inline-block mb-4">
+              <span
+                class="bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold"
+              >
+                🔥 +10 000 membres actifs
+              </span>
+            </div>
+            <h1
+              class="text-5xl md:text-7xl font-black text-gray-900 mb-6 leading-tight"
+            >
+              Transformez Votre <span class="gradient-text">Corps</span> et
+              Votre <span class="gradient-text">Esprit</span>
+            </h1>
+            <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+              Des programmes d'entraînement personnalisés, des recettes saines
+              et une communauté motivante pour atteindre vos objectifs fitness.
+            </p>
+            <div class="flex flex-wrap gap-4 mb-12">
+              <button
+                class="btn-primary text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg"
+              >
+                <i class="fas fa-rocket mr-2"></i>Commencer Gratuitement
+              </button>
+              <button
+                class="bg-white border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full font-bold text-lg hover:border-purple-600 hover:text-purple-600 transition"
+              >
+                <i class="fas fa-play-circle mr-2"></i>Voir la Démo
+              </button>
+            </div>
+            <div class="flex items-center gap-6 text-sm text-gray-600">
+              <div class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                Sans engagement
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                Annulation à tout moment
+              </div>
+            </div>
+          </div>
+          <div class="fade-in hidden md:block">
+            <div class="hero-image">
+              <img
+                src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=1000&fit=crop"
+                alt="Fitness"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute top-6 right-6 bg-white rounded-2xl p-4 shadow-2xl floating-badge"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center"
+                  >
+                    <i class="fas fa-fire text-green-600 text-xl"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs text-gray-500">Calories brûlées</p>
+                    <p class="text-xl font-bold text-gray-900">2,450 kcal</p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="absolute bottom-6 left-6 bg-white rounded-2xl p-4 shadow-2xl floating-badge"
+                style="animation-delay: 0.5s"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center"
+                  >
+                    <i class="fas fa-chart-line text-purple-600 text-xl"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs text-gray-500">Progression</p>
+                    <p class="text-xl font-bold text-gray-900">+45%</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div
+          class="mt-20 bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden"
+        >
+          <div class="grid grid-cols-2 md:grid-cols-4">
+            <div class="stat-item p-8 text-center">
+              <div class="text-4xl font-black gradient-text mb-2">500+</div>
+              <p class="text-gray-600">Exercices</p>
+            </div>
+            <div class="stat-item p-8 text-center">
+              <div class="text-4xl font-black gradient-text mb-2">50+</div>
+              <p class="text-gray-600">Programmes</p>
+            </div>
+            <div class="stat-item p-8 text-center">
+              <div class="text-4xl font-black gradient-text mb-2">200+</div>
+              <p class="text-gray-600">Recettes</p>
+            </div>
+            <div class="stat-item p-8 text-center">
+              <div class="text-4xl font-black gradient-text mb-2">10K+</div>
+              <p class="text-gray-600">Membres</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Exercices Section -->
+    <section id="exercices" class="py-20 px-6 bg-gray-50">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16 fade-in">
+          <span
+            class="text-purple-600 font-semibold uppercase tracking-wide text-sm"
+            >Nos Exercices</span
+          >
+          <h2 class="text-4xl md:text-6xl font-black text-gray-900 mt-2 mb-4">
+            Maîtrisez Chaque Mouvement
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Des tutoriels vidéo détaillés avec des explications techniques pour
+            une exécution parfaite
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="card rounded-3xl overflow-hidden fade-in">
+            <div class="image-overlay h-64">
+              <img
+                src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=400&fit=crop"
+                alt="Musculation"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <div
+                class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center mb-4"
+              >
+                <i class="fas fa-dumbbell text-purple-600 text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Musculation</h3>
+              <p class="text-gray-600 mb-4">
+                Développez votre masse musculaire avec nos exercices ciblés et
+                progressifs
+              </p>
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-center text-gray-600 text-sm">
+                  <i class="fas fa-check text-green-500 mr-2"></i>
+                  150+ exercices détaillés
+                </li>
+                <li class="flex items-center text-gray-600 text-sm">
+                  <i class="fas fa-check text-green-500 mr-2"></i>
+                  Vidéos HD avec ralentis
+                </li>
+                <li class="flex items-center text-gray-600 text-sm">
+                  <i class="fas fa-check text-green-500 mr-2"></i>
+                  Conseils de pro
+                </li>
+              </ul>
+              <button
+                class="text-purple-600 font-semibold hover:text-purple-700 transition flex items-center"
+              >
+                Découvrir <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="card rounded-3xl overflow-hidden fade-in"
+            style="transition-delay: 0.1s"
+          >
+            <div class="image-overlay h-64">
+              <img
+                src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=600&h=400&fit=crop"
+                alt="Cardio"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <div
+                class="w-14 h-14 bg-red-100 rounded-2xl flex items-center justify-center mb-4"
+              >
+                <i class="fas fa-heart-pulse text-red-600 text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Cardio</h3>
+              <p class="text-gray-600 mb-4">
+                Améliorez votre endurance et brûlez des calories efficacement
+              </p>
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-center text-gray-600 text-sm">
+                  <i class="fas fa-check text-green-500 mr-2"></i>
+                  HIIT & cardio modéré
+                </li>
+                <li class="flex items-center text-gray-600 text-sm">
+                  <i class="fas fa-check text-green-500 mr-2"></i>
+                  Avec ou sans matériel
+                </li>
+                <li class="flex items-center text-gray-600 text-sm">
+                  <i class="fas fa-check text-green-500 mr-2"></i>
+                  Tous niveaux
+                </li>
+              </ul>
+              <button
+                class="text-purple-600 font-semibold hover:text-purple-700 transition flex items-center"
+              >
+                Découvrir <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="card rounded-3xl overflow-hidden fade-in"
+            style="transition-delay: 0.2s"
+          >
+            <div class="image-overlay h-64">
+              <img
+                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=400&fit=crop"
+                alt="Yoga"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <div
+                class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-4"
+              >
+                <i class="fas fa-spa text-blue-600 text-2xl"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">
+                Yoga & Mobilité
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Renforcez votre souplesse et trouvez l'équilibre corps-esprit
+              </p>
+              <ul class="space-y-2 mb-6">
+                <li class="flex items-center text-gray-600 text-sm">
+                  <i class="fas fa-check text-green-500 mr-2"></i>
+                  Postures détaillées
+                </li>
+                <li class="flex items-center text-gray-600 text-sm">
+                  <i class="fas fa-check text-green-500 mr-2"></i>
+                  Séances guidées audio
+                </li>
+                <li class="flex items-center text-gray-600 text-sm">
+                  <i class="fas fa-check text-green-500 mr-2"></i>
+                  Débutant à expert
+                </li>
+              </ul>
+              <button
+                class="text-purple-600 font-semibold hover:text-purple-700 transition flex items-center"
+              >
+                Découvrir <i class="fas fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Programmes Section -->
+    <section id="programmes" class="py-20 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16 fade-in">
+          <span
+            class="text-purple-600 font-semibold uppercase tracking-wide text-sm"
+            >Nos Programmes</span
+          >
+          <h2 class="text-4xl md:text-6xl font-black text-gray-900 mt-2 mb-4">
+            Votre Plan Sur Mesure
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Des programmes structurés et adaptés à votre niveau pour des
+            résultats garantis
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Programme 1 -->
+          <div class="card rounded-3xl overflow-hidden fade-in">
+            <div
+              class="h-56 bg-gradient-to-br from-orange-400 to-red-500 relative"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop"
+                alt="Perte de poids"
+                class="w-full h-full object-cover opacity-80"
+              />
+              <div class="absolute top-4 left-4">
+                <span class="program-badge">Débutant</span>
+              </div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <div class="bg-white/90 backdrop-blur rounded-xl p-3">
+                  <div class="flex items-center justify-between text-sm">
+                    <span class="flex items-center text-gray-700">
+                      <i class="far fa-clock mr-1"></i>12 semaines
+                    </span>
+                    <span class="flex items-center text-gray-700">
+                      <i class="fas fa-fire mr-1"></i>Intensif
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                Programme Perte de Poids
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Perdez du poids durablement avec un plan complet associant
+                cardio et nutrition
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="text-3xl font-bold gradient-text"
+                  >29€<span class="text-lg text-gray-500">/mois</span></span
+                >
+                <button
+                  class="btn-primary text-white px-6 py-3 rounded-full font-semibold"
+                >
+                  Choisir
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Programme 2 -->
+          <div
+            class="card rounded-3xl overflow-hidden fade-in relative"
+            style="transition-delay: 0.1s"
+          >
+            <div
+              class="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10"
+            >
+              <span
+                class="bg-yellow-400 text-gray-900 px-4 py-1 rounded-full text-xs font-bold uppercase shadow-lg"
+              >
+                ⭐ Populaire
+              </span>
+            </div>
+            <div
+              class="h-56 bg-gradient-to-br from-purple-400 to-indigo-500 relative"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&h=400&fit=crop"
+                alt="Prise de masse"
+                class="w-full h-full object-cover opacity-80"
+              />
+              <div class="absolute top-4 left-4">
+                <span class="program-badge">Intermédiaire</span>
+              </div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <div class="bg-white/90 backdrop-blur rounded-xl p-3">
+                  <div class="flex items-center justify-between text-sm">
+                    <span class="flex items-center text-gray-700">
+                      <i class="far fa-clock mr-1"></i>16 semaines
+                    </span>
+                    <span class="flex items-center text-gray-700">
+                      <i class="fas fa-dumbbell mr-1"></i>Force
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                Programme Prise de Masse
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Construisez du muscle avec un programme de musculation optimisé
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="text-3xl font-bold gradient-text"
+                  >39€<span class="text-lg text-gray-500">/mois</span></span
+                >
+                <button
+                  class="btn-primary text-white px-6 py-3 rounded-full font-semibold"
+                >
+                  Choisir
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Programme 3 -->
+          <div
+            class="card rounded-3xl overflow-hidden fade-in"
+            style="transition-delay: 0.2s"
+          >
+            <div
+              class="h-56 bg-gradient-to-br from-cyan-400 to-blue-500 relative"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=600&h=400&fit=crop"
+                alt="Performance"
+                class="w-full h-full object-cover opacity-80"
+              />
+              <div class="absolute top-4 left-4">
+                <span class="program-badge">Avancé</span>
+              </div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <div class="bg-white/90 backdrop-blur rounded-xl p-3">
+                  <div class="flex items-center justify-between text-sm">
+                    <span class="flex items-center text-gray-700">
+                      <i class="far fa-clock mr-1"></i>20 semaines
+                    </span>
+                    <span class="flex items-center text-gray-700">
+                      <i class="fas fa-trophy mr-1"></i>Elite
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                Programme Performance
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Atteignez vos limites avec un plan d'entraînement ultra-complet
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="text-3xl font-bold gradient-text"
+                  >49€<span class="text-lg text-gray-500">/mois</span></span
+                >
+                <button
+                  class="btn-primary text-white px-6 py-3 rounded-full font-semibold"
+                >
+                  Choisir
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Recettes Section -->
+    <section id="recettes" class="py-20 px-6 bg-gray-50">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16 fade-in">
+          <span
+            class="text-purple-600 font-semibold uppercase tracking-wide text-sm"
+            >Nos Recettes</span
+          >
+          <h2 class="text-4xl md:text-6xl font-black text-gray-900 mt-2 mb-4">
+            Mangez Sain, Mangez Bon
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Des recettes équilibrées et délicieuses pour accompagner vos efforts
+          </p>
+        </div>
+
+        <!-- Catégories -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          <button
+            class="bg-white border-2 border-purple-600 text-purple-600 rounded-2xl p-4 font-semibold hover:bg-purple-600 hover:text-white transition"
+          >
+            <i class="fas fa-utensils mr-2"></i>Tous
+          </button>
+          <button
+            class="bg-white border-2 border-gray-300 text-gray-700 rounded-2xl p-4 font-semibold hover:border-purple-600 hover:text-purple-600 transition"
+          >
+            <i class="fas fa-bacon mr-2"></i>Protéines
+          </button>
+          <button
+            class="bg-white border-2 border-gray-300 text-gray-700 rounded-2xl p-4 font-semibold hover:border-purple-600 hover:text-purple-600 transition"
+          >
+            <i class="fas fa-leaf mr-2"></i>Végétarien
+          </button>
+          <button
+            class="bg-white border-2 border-gray-300 text-gray-700 rounded-2xl p-4 font-semibold hover:border-purple-600 hover:text-purple-600 transition"
+          >
+            <i class="fas fa-cookie-bite mr-2"></i>Snacks
+          </button>
+        </div>
+
+        <!-- Grille de recettes -->
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="recipe-card card fade-in">
+            <img
+              src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop"
+              alt="Salade"
+              class="w-full h-56 object-cover"
+            />
+            <div class="p-5">
+              <div class="flex items-center gap-2 mb-3">
+                <span
+                  class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-semibold"
+                  >Végétarien</span
+                >
+                <span class="text-gray-500 text-sm flex items-center">
+                  <i class="far fa-clock mr-1"></i>15 min
+                </span>
+              </div>
+              <h4 class="text-xl font-bold text-gray-900 mb-2">
+                Bowl Quinoa & Légumes
+              </h4>
+              <p class="text-gray-600 text-sm mb-4">
+                Un bol coloré et nutritif, parfait pour le déjeuner
+              </p>
+              <div
+                class="flex items-center justify-between text-sm text-gray-600"
+              >
+                <span
+                  ><i class="fas fa-fire text-orange-500 mr-1"></i>420
+                  kcal</span
+                >
+                <span
+                  ><i class="fas fa-drumstick-bite text-red-500 mr-1"></i>25g
+                  protéines</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="recipe-card card fade-in" style="transition-delay: 0.1s">
+            <img
+              src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&h=400&fit=crop"
+              alt="Pancakes"
+              class="w-full h-56 object-cover"
+            />
+            <div class="p-5">
+              <div class="flex items-center gap-2 mb-3">
+                <span
+                  class="bg-orange-100 text-orange-700 text-xs px-3 py-1 rounded-full font-semibold"
+                  >Protéines</span
+                >
+                <span class="text-gray-500 text-sm flex items-center">
+                  <i class="far fa-clock mr-1"></i>20 min
+                </span>
+              </div>
+              <h4 class="text-xl font-bold text-gray-900 mb-2">
+                Pancakes Protéinés
+              </h4>
+              <p class="text-gray-600 text-sm mb-4">
+                Des pancakes moelleux riches en protéines
+              </p>
+              <div
+                class="flex items-center justify-between text-sm text-gray-600"
+              >
+                <span
+                  ><i class="fas fa-fire text-orange-500 mr-1"></i>350
+                  kcal</span
+                >
+                <span
+                  ><i class="fas fa-drumstick-bite text-red-500 mr-1"></i>30g
+                  protéines</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="recipe-card card fade-in" style="transition-delay: 0.2s">
+            <img
+              src="https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?w=600&h=400&fit=crop"
+              alt="Smoothie"
+              class="w-full h-56 object-cover"
+            />
+            <div class="p-5">
+              <div class="flex items-center gap-2 mb-3">
+                <span
+                  class="bg-purple-100 text-purple-700 text-xs px-3 py-1 rounded-full font-semibold"
+                  >Snack</span
+                >
+                <span class="text-gray-500 text-sm flex items-center">
+                  <i class="far fa-clock mr-1"></i>5 min
+                </span>
+              </div>
+              <h4 class="text-xl font-bold text-gray-900 mb-2">
+                Smoothie Énergisant
+              </h4>
+              <p class="text-gray-600 text-sm mb-4">
+                Un boost d'énergie avant l'entraînement
+              </p>
+              <div
+                class="flex items-center justify-between text-sm text-gray-600"
+              >
+                <span
+                  ><i class="fas fa-fire text-orange-500 mr-1"></i>280
+                  kcal</span
+                >
+                <span
+                  ><i class="fas fa-drumstick-bite text-red-500 mr-1"></i>15g
+                  protéines</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Recettes -->
+        <div class="mt-12 text-center">
+          <button
+            class="btn-primary text-white px-8 py-4 rounded-full font-bold text-lg"
+          >
+            <i class="fas fa-book-open mr-2"></i>Voir Toutes les Recettes
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="fade-in">
+            <span
+              class="text-purple-600 font-semibold uppercase tracking-wide text-sm"
+              >Pourquoi FitLife</span
+            >
+            <h2 class="text-4xl md:text-5xl font-black text-gray-900 mt-2 mb-6">
+              Tout Ce Dont Vous Avez Besoin Pour Réussir
+            </h2>
+            <p class="text-gray-600 mb-8 text-lg">
+              Une plateforme complète qui combine entraînement, nutrition et
+              suivi pour des résultats durables.
+            </p>
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <div class="feature-icon flex-shrink-0">
+                  <i class="fas fa-video text-white text-2xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-900 text-lg mb-2">
+                    Vidéos HD Professionnelles
+                  </h4>
+                  <p class="text-gray-600">
+                    Des tutoriels filmés par des coachs certifiés avec angles
+                    multiples
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="feature-icon flex-shrink-0">
+                  <i class="fas fa-chart-line text-white text-2xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-900 text-lg mb-2">
+                    Suivi de Progression
+                  </h4>
+                  <p class="text-gray-600">
+                    Trackez vos performances et visualisez vos progrès en temps
+                    réel
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="feature-icon flex-shrink-0">
+                  <i class="fas fa-users text-white text-2xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-900 text-lg mb-2">
+                    Communauté Active
+                  </h4>
+                  <p class="text-gray-600">
+                    Échangez avec des milliers de membres motivés et soutenants
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fade-in">
+            <img
+              src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=1000&fit=crop"
+              alt="App"
+              class="rounded-3xl shadow-2xl"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Testimonials -->
+    <section class="py-20 px-6 bg-gray-50">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16 fade-in">
+          <span
+            class="text-purple-600 font-semibold uppercase tracking-wide text-sm"
+            >Témoignages</span
+          >
+          <h2 class="text-4xl md:text-6xl font-black text-gray-900 mt-2 mb-4">
+            Ils Ont Transformé Leur Vie
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="testimonial rounded-3xl p-8 fade-in">
+            <div class="flex items-center mb-4">
+              <img
+                src="https://i.pravatar.cc/100?img=1"
+                alt="Marie"
+                class="w-16 h-16 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-bold text-gray-900">Marie L.</h4>
+                <div class="text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">
+              "J'ai perdu 12kg en 3 mois ! Les programmes sont clairs, les
+              recettes délicieuses. Je me sens tellement mieux dans ma peau."
+            </p>
+          </div>
+
+          <div
+            class="testimonial rounded-3xl p-8 fade-in"
+            style="transition-delay: 0.1s"
+          >
+            <div class="flex items-center mb-4">
+              <img
+                src="https://i.pravatar.cc/100?img=12"
+                alt="Thomas"
+                class="w-16 h-16 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-bold text-gray-900">Thomas B.</h4>
+                <div class="text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">
+              "Enfin une app qui tient ses promesses ! Les exercices sont variés
+              et la communauté est super motivante. Merci FitLife !"
+            </p>
+          </div>
+
+          <div
+            class="testimonial rounded-3xl p-8 fade-in"
+            style="transition-delay: 0.2s"
+          >
+            <div class="flex items-center mb-4">
+              <img
+                src="https://i.pravatar.cc/100?img=5"
+                alt="Sophie"
+                class="w-16 h-16 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-bold text-gray-900">Sophie M.</h4>
+                <div class="text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">
+              "Les vidéos sont incroyables, j'ai l'impression d'avoir un coach
+              perso à la maison. Je recommande à 100% !"
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-20 px-6">
+      <div class="max-w-4xl mx-auto">
+        <div
+          class="gradient-bg rounded-3xl p-12 text-center text-white shadow-2xl fade-in"
+        >
+          <h2 class="text-4xl md:text-5xl font-black mb-6">
+            Commencez Votre Transformation Aujourd'hui
+          </h2>
+          <p class="text-xl mb-8 opacity-90">
+            Rejoignez plus de 10 000 membres et atteignez enfin vos objectifs
+            fitness
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+            <button
+              class="bg-white text-purple-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition shadow-lg"
+            >
+              <i class="fas fa-rocket mr-2"></i>Essai Gratuit 14 Jours
+            </button>
+            <button
+              class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-purple-600 transition"
+            >
+              <i class="fas fa-phone mr-2"></i>Nous Contacter
+            </button>
+          </div>
+          <p class="text-sm opacity-75">
+            <i class="fas fa-check-circle mr-1"></i> Sans engagement •
+            <i class="fas fa-check-circle mr-1"></i> Annulation à tout moment
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-4 gap-12 mb-12">
+          <div>
+            <div class="text-2xl font-bold mb-4">
+              <i class="fas fa-dumbbell mr-2"></i>FitLife
+            </div>
+            <p class="text-gray-400 mb-4">
+              Votre partenaire pour une vie plus saine et plus active.
+            </p>
+            <div class="flex gap-4">
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition"
+              >
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition"
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition"
+              >
+                <i class="fab fa-tiktok"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4 text-lg">Produits</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-white transition">Exercices</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition">Programmes</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition">Recettes</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition">Coaching</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4 text-lg">Entreprise</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-white transition">À Propos</a>
+              </li>
+              <li><a href="#" class="hover:text-white transition">Blog</a></li>
+              <li>
+                <a href="#" class="hover:text-white transition">Carrières</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition">Presse</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4 text-lg">Support</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#" class="hover:text-white transition">FAQ</a></li>
+              <li>
+                <a href="#" class="hover:text-white transition">Contact</a>
+              </li>
+              <li><a href="#" class="hover:text-white transition">CGV</a></li>
+              <li>
+                <a href="#" class="hover:text-white transition"
+                  >Confidentialité</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+          <p>
+            &copy; 2024 FitLife. Tous droits réservés. Fait avec
+            <i class="fas fa-heart text-red-500"></i> en France
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+
+      // Navbar scroll effect
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // Intersection Observer for fade-in animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Mobile menu
+      const menuBtn = document.querySelector(".md\\:hidden");
+      const mobileMenu = document.createElement("div");
+      mobileMenu.className =
+        "fixed top-0 left-0 w-full h-screen bg-white z-40 flex flex-col items-center justify-center space-y-8 transform translate-x-full transition-transform duration-500";
+      mobileMenu.innerHTML = `
+            <a href="#accueil" class="text-gray-900 text-3xl font-bold hover:text-purple-600 transition">Accueil</a>
+            <a href="#exercices" class="text-gray-900 text-3xl font-bold hover:text-purple-600 transition">Exercices</a>
+            <a href="#programmes" class="text-gray-900 text-3xl font-bold hover:text-purple-600 transition">Programmes</a>
+            <a href="#recettes" class="text-gray-900 text-3xl font-bold hover:text-purple-600 transition">Recettes</a>
+            <button class="btn-primary text-white px-8 py-4 rounded-full font-bold text-lg">Commencer</button>
+        `;
+      document.body.appendChild(mobileMenu);
+
+      let menuOpen = false;
+      menuBtn.addEventListener("click", () => {
+        menuOpen = !menuOpen;
+        if (menuOpen) {
+          mobileMenu.style.transform = "translateX(0)";
+          menuBtn.innerHTML = '<i class="fas fa-times"></i>';
+        } else {
+          mobileMenu.style.transform = "translateX(100%)";
+          menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+      });
+
+      mobileMenu.querySelectorAll("a, button").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.style.transform = "translateX(100%)";
+          menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+          menuOpen = false;
+        });
+      });
+
+      console.log("🎯 FitLife chargé avec succès!");
+    </script>
+  </body>
+</html>
