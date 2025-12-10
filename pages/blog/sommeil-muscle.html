@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+    <title>Sommeil & Muscle : L'Arme Secrète - IRONFORGE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+  <body class="bg-black text-white">
+    <nav class="fixed w-full top-0 z-50" id="navbar">
+      <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <a href="/" class="text-3xl font-bold flex items-center group">
+            <i class="fas fa-fire text-red-500 mr-2 group-hover:animate-pulse"></i>
+            <span class="gradient-text-red">IRONFORGE</span>
+          </a>
+          <div class="hidden md:flex items-center space-x-8" id="navbar-links">
+            <a href="/" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">Home</a>
+            <a href="/pages/workouts/index.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">Workouts</a>
+            <a href="/pages/programs.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">Programs</a>
+            <a href="/pages/blog.html" class="text-red-500 font-bold uppercase tracking-wide text-sm">Blog</a>
+            <a href="/pages/about.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">About</a>
+            <a href="/pages/faq.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">FAQ</a>
+            <a class="btn-primary px-6 py-2 rounded font-bold" href="/pages/programs.html">START NOW</a>
+          </div>
+          <button id="menu-toggle" class="md:hidden text-red-500 text-2xl">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="pt-32 pb-16 px-6">
+      <article class="max-w-4xl mx-auto">
+        <div class="mb-8">
+          <a href="/pages/blog.html" class="text-red-500 font-bold hover:text-red-400 transition flex items-center text-sm uppercase tracking-wider">
+            <i class="fas fa-chevron-left mr-2"></i>Retour au blog
+          </a>
+        </div>
+
+        <header class="mb-12">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="bg-green-500/20 text-green-400 px-3 py-1 rounded text-xs font-bold uppercase">Récupération</span>
+            <span class="text-gray-500 text-sm">2 Décembre 2024</span>
+            <span class="text-gray-500 text-sm">• 7 min de lecture</span>
+          </div>
+          <h1 class="text-4xl md:text-6xl font-black uppercase mb-6">
+            Sommeil & Muscle : <span class="gradient-text-red">L'Arme Secrète</span>
+          </h1>
+          <p class="text-xl text-gray-400">
+            Pourquoi 8h de sommeil peuvent vous faire gagner plus de muscle que 2h de training en plus.
+          </p>
+        </header>
+
+        <div class="rounded-2xl overflow-hidden mb-12">
+          <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1200&h=600&fit=crop" 
+               alt="Sommeil Muscle" class="w-full h-64 md:h-96 object-cover" />
+        </div>
+
+        <div class="prose prose-invert max-w-none space-y-8">
+          <p class="text-lg text-gray-300 leading-relaxed">
+            Vous pouvez avoir le meilleur programme du monde, la nutrition parfaite, mais sans sommeil de qualité, vos gains seront médiocres. Voici la science derrière cette affirmation.
+          </p>
+
+          <h2 class="text-3xl font-black uppercase mt-12 mb-6">La Biologie du Sommeil</h2>
+          
+          <p class="text-gray-300 leading-relaxed">
+            C'est pendant le sommeil profond que votre corps libère l'hormone de croissance (GH). Sans elle, pas de synthèse protéique optimale. Une nuit de 5h au lieu de 8h peut réduire votre production de GH de 70%.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-6 mt-8">
+            <div class="card-dark rounded-xl p-6 border-l-4 border-green-500">
+              <h4 class="font-bold text-green-400 mb-2">8h de sommeil</h4>
+              <ul class="text-gray-400 text-sm space-y-1">
+                <li>• +70% hormone de croissance</li>
+                <li>• Cortisol bas le matin</li>
+                <li>• Récupération complète</li>
+                <li>• Énergie maximale</li>
+              </ul>
+            </div>
+            <div class="card-dark rounded-xl p-6 border-l-4 border-red-500">
+              <h4 class="font-bold text-red-400 mb-2">5h de sommeil</h4>
+              <ul class="text-gray-400 text-sm space-y-1">
+                <li>• -70% hormone de croissance</li>
+                <li>• Cortisol élevé</li>
+                <li>• Catabolisme accru</li>
+                <li>• Performance réduite</li>
+              </ul>
+            </div>
+          </div>
+
+          <h2 class="text-3xl font-black uppercase mt-12 mb-6">Optimiser Votre Sommeil</h2>
+          
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-red-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                <span class="text-red-500 font-bold">1</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-white">Horaire fixe</h4>
+                <p class="text-gray-400">Couchez-vous et levez-vous à la même heure, même le weekend.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-red-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                <span class="text-red-500 font-bold">2</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-white">Chambre froide</h4>
+                <p class="text-gray-400">18-19°C est la température idéale pour un sommeil profond.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-red-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                <span class="text-red-500 font-bold">3</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-white">Zero écrans</h4>
+                <p class="text-gray-400">Pas de téléphone ni TV 1h avant le coucher. Lumière bleue = ennemi.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-red-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                <span class="text-red-500 font-bold">4</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-white">Caféine coupée</h4>
+                <p class="text-gray-400">Pas de café après 14h. La demi-vie de la caféine est de 6h.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-dark rounded-xl p-6 border-l-4 border-green-500 mt-8">
+            <p class="text-gray-300 italic">
+              "Le sommeil est le meilleur stéroïde légal qui existe. Et il est gratuit."
+            </p>
+          </div>
+
+          <div class="gradient-bg-red rounded-xl p-8 mt-12 text-center">
+            <h3 class="text-2xl font-black uppercase mb-4">Optimise ta récup</h3>
+            <p class="text-white/80 mb-6">Nos programmes incluent des protocoles de récupération complets.</p>
+            <a href="/pages/programs.html" class="bg-black text-white px-8 py-4 rounded font-bold inline-block hover:bg-gray-900 transition">
+              VOIR LES PROGRAMMES
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-red-500/20">
+          <div class="flex items-center gap-4">
+            <img src="https://i.pravatar.cc/100?img=7" alt="Author" class="w-16 h-16 rounded-full border-2 border-red-500" />
+            <div>
+              <p class="font-bold">Viktor Drago</p>
+              <p class="text-gray-500 text-sm">Strength Coach @ IRONFORGE</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="bg-black border-t border-red-500/20 py-12 px-6 mt-20">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-gray-600">&copy; 2024 IRONFORGE. Forge your legend.</p>
+        <div class="flex gap-6 text-sm">
+          <a href="/pages/workouts/index.html" class="text-gray-500 hover:text-red-500 transition font-bold uppercase">Workouts</a>
+          <a href="/pages/faq.html" class="text-gray-500 hover:text-red-500 transition font-bold uppercase">FAQ</a>
+          <a href="/pages/programs.html" class="text-gray-500 hover:text-red-500 transition font-bold uppercase">Programs</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

@@ -121,8 +121,9 @@ const renderWorkouts = (workouts, container) => {
   }
 
   workouts.forEach((workout, index) => {
-    const card = document.createElement('div');
-    card.className = 'card-dark rounded-xl overflow-hidden fade-in-up';
+    const card = document.createElement('a');
+    card.href = `/pages/workouts/detail.html?id=${workout.id}`;
+    card.className = 'card-dark rounded-xl overflow-hidden fade-in-up block cursor-pointer';
     card.style.animationDelay = `${index * 0.1}s`;
     
     const typeColors = {
@@ -155,10 +156,9 @@ const renderWorkouts = (workouts, container) => {
             `<span class="px-2 py-1 bg-red-500/20 text-red-400 rounded">${muscle}</span>`
           ).join('')}
         </div>
-        <a href="/pages/workouts/detail.html?id=${workout.id}" 
-           class="btn-primary w-full text-center py-3 rounded inline-block">
+        <span class="btn-primary w-full text-center py-3 rounded inline-block">
           START WORKOUT
-        </a>
+        </span>
       </div>
     `;
     container.appendChild(card);

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+    <title>Progressive Overload : Le Guide Ultime - IRONFORGE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+  <body class="bg-black text-white">
+    <nav class="fixed w-full top-0 z-50" id="navbar">
+      <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <a href="/" class="text-3xl font-bold flex items-center group">
+            <i class="fas fa-fire text-red-500 mr-2 group-hover:animate-pulse"></i>
+            <span class="gradient-text-red">IRONFORGE</span>
+          </a>
+          <div class="hidden md:flex items-center space-x-8" id="navbar-links">
+            <a href="/" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">Home</a>
+            <a href="/pages/workouts/index.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">Workouts</a>
+            <a href="/pages/programs.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">Programs</a>
+            <a href="/pages/blog.html" class="text-red-500 font-bold uppercase tracking-wide text-sm">Blog</a>
+            <a href="/pages/about.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">About</a>
+            <a href="/pages/faq.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">FAQ</a>
+            <a class="btn-primary px-6 py-2 rounded font-bold" href="/pages/programs.html">START NOW</a>
+          </div>
+          <button id="menu-toggle" class="md:hidden text-red-500 text-2xl">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="pt-32 pb-16 px-6">
+      <article class="max-w-4xl mx-auto">
+        <!-- Breadcrumb -->
+        <div class="mb-8">
+          <a href="/pages/blog.html" class="text-red-500 font-bold hover:text-red-400 transition flex items-center text-sm uppercase tracking-wider">
+            <i class="fas fa-chevron-left mr-2"></i>Retour au blog
+          </a>
+        </div>
+
+        <!-- Header -->
+        <header class="mb-12">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="bg-red-500/20 text-red-400 px-3 py-1 rounded text-xs font-bold uppercase">Entraînement</span>
+            <span class="text-gray-500 text-sm">8 Décembre 2024</span>
+            <span class="text-gray-500 text-sm">• 8 min de lecture</span>
+          </div>
+          <h1 class="text-4xl md:text-6xl font-black uppercase mb-6">
+            Progressive Overload : Le Guide <span class="gradient-text-red">Ultime</span>
+          </h1>
+          <p class="text-xl text-gray-400">
+            Comment augmenter systématiquement vos charges pour maximiser vos gains musculaires et exploser vos records.
+          </p>
+        </header>
+
+        <!-- Featured Image -->
+        <div class="rounded-2xl overflow-hidden mb-12">
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=600&fit=crop" 
+               alt="Progressive Overload" class="w-full h-64 md:h-96 object-cover" />
+        </div>
+
+        <!-- Content -->
+        <div class="prose prose-invert max-w-none space-y-8">
+          <p class="text-lg text-gray-300 leading-relaxed">
+            Le <strong class="text-white">progressive overload</strong> (surcharge progressive) est le principe fondamental de tout programme d'entraînement efficace. Sans lui, votre corps n'a aucune raison de s'adapter et de devenir plus fort. Voici tout ce que vous devez savoir pour l'appliquer correctement.
+          </p>
+
+          <div class="card-dark rounded-xl p-6 border-l-4 border-red-500">
+            <p class="text-gray-300 italic">
+              "Le corps s'adapte uniquement au stress qu'on lui impose. Pas de stress supplémentaire = pas de progression."
+            </p>
+          </div>
+
+          <h2 class="text-3xl font-black uppercase mt-12 mb-6">Qu'est-ce que le Progressive Overload ?</h2>
+          
+          <p class="text-gray-300 leading-relaxed">
+            Le progressive overload consiste à augmenter progressivement les demandes imposées à votre système musculo-squelettique. Cela peut se faire de plusieurs façons :
+          </p>
+
+          <ul class="space-y-4 text-gray-300">
+            <li class="flex items-start">
+              <i class="fas fa-dumbbell text-red-500 mr-3 mt-1"></i>
+              <span><strong class="text-white">Augmenter le poids</strong> : La méthode la plus évidente. Ajoutez 2.5kg-5kg quand vous maîtrisez parfaitement un exercice.</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-redo text-red-500 mr-3 mt-1"></i>
+              <span><strong class="text-white">Augmenter les répétitions</strong> : Passez de 8 à 10 reps avant d'augmenter la charge.</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-layer-group text-red-500 mr-3 mt-1"></i>
+              <span><strong class="text-white">Augmenter les séries</strong> : Ajoutez une série supplémentaire par exercice.</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-clock text-red-500 mr-3 mt-1"></i>
+              <span><strong class="text-white">Réduire le temps de repos</strong> : Passez de 90 à 60 secondes entre les séries.</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-tachometer-alt text-red-500 mr-3 mt-1"></i>
+              <span><strong class="text-white">Améliorer le tempo</strong> : Ralentissez la phase excentrique pour plus de tension.</span>
+            </li>
+          </ul>
+
+          <h2 class="text-3xl font-black uppercase mt-12 mb-6">Le Plan d'Action Concret</h2>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="card-dark rounded-xl p-6">
+              <h3 class="font-black text-xl mb-4 text-red-500">Semaines 1-4</h3>
+              <p class="text-gray-400">Maîtrisez la technique avec des charges modérées. Visez 3x10 avec une RPE de 7.</p>
+            </div>
+            <div class="card-dark rounded-xl p-6">
+              <h3 class="font-black text-xl mb-4 text-red-500">Semaines 5-8</h3>
+              <p class="text-gray-400">Augmentez de 2.5kg chaque semaine tout en maintenant 3x10.</p>
+            </div>
+            <div class="card-dark rounded-xl p-6">
+              <h3 class="font-black text-xl mb-4 text-red-500">Semaines 9-12</h3>
+              <p class="text-gray-400">Passez à 4x8 et continuez la progression linéaire des charges.</p>
+            </div>
+            <div class="card-dark rounded-xl p-6">
+              <h3 class="font-black text-xl mb-4 text-red-500">Semaine 13</h3>
+              <p class="text-gray-400">Deload : réduisez volume et intensité de 40% pour récupérer.</p>
+            </div>
+          </div>
+
+          <h2 class="text-3xl font-black uppercase mt-12 mb-6">Les Erreurs à Éviter</h2>
+
+          <div class="space-y-4">
+            <div class="flex items-start gap-4 p-4 bg-red-500/10 rounded-xl border border-red-500/30">
+              <i class="fas fa-times-circle text-red-500 text-xl mt-1"></i>
+              <div>
+                <h4 class="font-bold text-white">Progresser trop vite</h4>
+                <p class="text-gray-400">Augmenter de 10kg d'un coup mène aux blessures. Patience.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-4 bg-red-500/10 rounded-xl border border-red-500/30">
+              <i class="fas fa-times-circle text-red-500 text-xl mt-1"></i>
+              <div>
+                <h4 class="font-bold text-white">Ignorer la technique</h4>
+                <p class="text-gray-400">Une rep avec mauvaise forme ne compte pas. Qualité > Quantité.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 p-4 bg-red-500/10 rounded-xl border border-red-500/30">
+              <i class="fas fa-times-circle text-red-500 text-xl mt-1"></i>
+              <div>
+                <h4 class="font-bold text-white">Ne pas tracker</h4>
+                <p class="text-gray-400">Sans carnet d'entraînement, impossible de savoir si vous progressez.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gradient-bg-red rounded-xl p-8 mt-12 text-center">
+            <h3 class="text-2xl font-black uppercase mb-4">Prêt à progresser ?</h3>
+            <p class="text-white/80 mb-6">Découvrez nos programmes structurés avec progressive overload intégré.</p>
+            <a href="/pages/programs.html" class="bg-black text-white px-8 py-4 rounded font-bold inline-block hover:bg-gray-900 transition">
+              VOIR LES PROGRAMMES
+            </a>
+          </div>
+        </div>
+
+        <!-- Author -->
+        <div class="mt-12 pt-8 border-t border-red-500/20">
+          <div class="flex items-center gap-4">
+            <img src="https://i.pravatar.cc/100?img=11" alt="Author" class="w-16 h-16 rounded-full border-2 border-red-500" />
+            <div>
+              <p class="font-bold">Marcus Steel</p>
+              <p class="text-gray-500 text-sm">Head Coach @ IRONFORGE</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="bg-black border-t border-red-500/20 py-12 px-6 mt-20">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-gray-600">&copy; 2024 IRONFORGE. Forge your legend.</p>
+        <div class="flex gap-6 text-sm">
+          <a href="/pages/workouts/index.html" class="text-gray-500 hover:text-red-500 transition font-bold uppercase">Workouts</a>
+          <a href="/pages/faq.html" class="text-gray-500 hover:text-red-500 transition font-bold uppercase">FAQ</a>
+          <a href="/pages/programs.html" class="text-gray-500 hover:text-red-500 transition font-bold uppercase">Programs</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
