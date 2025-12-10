@@ -21,11 +21,9 @@
           <div class="hidden md:flex items-center space-x-8" id="navbar-links">
             <a href="#hero" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">Home</a>
             <a href="/pages/workouts/index.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">Workouts</a>
-            <a href="/pages/programs.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">Programs</a>
             <a href="/pages/blog.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">Blog</a>
             <a href="/pages/about.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">About</a>
             <a href="/pages/faq.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">FAQ</a>
-            <a class="btn-primary px-6 py-2 rounded font-bold" href="/pages/programs.html">START NOW</a>
           </div>
           <button id="menu-toggle" class="md:hidden text-red-500 text-2xl">
             <i class="fas fa-bars"></i>
@@ -34,12 +32,17 @@
       </div>
     </nav>
 
-    <!-- Hero Section avec video background -->
+    <!-- Hero Section avec image background -->
     <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div class="absolute inset-0 hex-pattern opacity-10"></div>
-      <video autoplay muted loop class="video-bg">
-        <source src="https://cdn.pixabay.com/vimeo/328940142/sport-24795.mp4?width=1280&hash=5f6d7f0c8e7d8f8e8e8e8e8e8e8e8e8e8e8e8e8e" type="video/mp4">
-      </video>
+      <!-- Background Image -->
+      <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&h=1080&fit=crop" 
+             alt="Gym" class="w-full h-full object-cover" />
+        <!-- Dark Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black"></div>
+        <!-- Hex Pattern on top -->
+        <div class="absolute inset-0 hex-pattern opacity-10"></div>
+      </div>
       <div class="relative z-10 max-w-7xl mx-auto px-6 py-20 text-center">
         <div class="fade-in-up">
           <h1 class="text-6xl md:text-8xl font-black mb-6 glitch" data-text="UNLEASH THE BEAST">
@@ -240,8 +243,17 @@
     </section>
 
     <!-- Programs Section -->
-    <section class="py-20 px-6 relative">
-      <div class="absolute inset-0 hex-pattern opacity-5"></div>
+    <section class="py-20 px-6 relative overflow-hidden">
+      <!-- Background Image with overlay -->
+      <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&h=1080&fit=crop" 
+             alt="" class="w-full h-full object-cover opacity-20" />
+        <div class="absolute inset-0 bg-gradient-to-r from-black via-black/95 to-black/80"></div>
+      </div>
+      <!-- Red accent glow -->
+      <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-red-500/10 to-transparent"></div>
+      <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-500/50 to-transparent"></div>
+      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-500/50 to-transparent"></div>
       <div class="relative z-10 max-w-7xl mx-auto">
         <div class="grid md:grid-cols-2 gap-12 items-center">
           <div class="slide-in-left">
@@ -280,8 +292,8 @@
                 </div>
               </div>
             </div>
-            <a href="/pages/programs.html" class="btn-primary px-8 py-4 rounded inline-block mt-8">
-              DÉCOUVRIR LES PROGRAMMES
+            <a href="/pages/workouts/index.html" class="btn-primary px-8 py-4 rounded inline-block mt-8">
+              VOIR LES WORKOUTS
             </a>
           </div>
           <div class="slide-in-right">
@@ -387,8 +399,8 @@
           Rejoignez l'élite. Commencez votre transformation maintenant.
         </p>
         <div class="flex flex-col sm:flex-row gap-6 justify-center">
-          <a class="btn-primary px-10 py-5 rounded text-xl inline-block pulse-glow" href="/pages/programs.html">
-            <i class="fas fa-fire mr-2"></i>START FREE TRIAL
+          <a class="btn-primary px-10 py-5 rounded text-xl inline-block pulse-glow" href="/pages/workouts/index.html">
+            <i class="fas fa-fire mr-2"></i>EXPLORE WORKOUTS
           </a>
           <a class="btn-outline px-10 py-5 rounded text-xl inline-block" href="/pages/faq.html">
             <i class="fas fa-question-circle mr-2"></i>LEARN MORE
@@ -428,7 +440,6 @@
             <h4 class="font-bold mb-4 text-red-500 uppercase">Training</h4>
             <ul class="space-y-2 text-gray-500">
               <li><a href="/pages/workouts/index.html" class="hover:text-red-500 transition">Workouts</a></li>
-              <li><a href="/pages/programs.html" class="hover:text-red-500 transition">Programs</a></li>
               <li><a href="#" class="hover:text-red-500 transition">Coaching</a></li>
             </ul>
           </div>

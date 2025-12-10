@@ -397,8 +397,8 @@ const initWorkoutDetail = async () => {
               <h4 class="font-black text-xl uppercase">Prêt à transpirer ?</h4>
               <p class="text-gray-400">Lancez la vidéo et donnez tout !</p>
             </div>
-            <a href="/pages/programs.html" class="btn-primary px-8 py-4 rounded font-bold">
-              <i class="fas fa-rocket mr-2"></i>VOIR LES PROGRAMMES
+            <a href="/pages/workouts/index.html" class="btn-primary px-8 py-4 rounded font-bold">
+              <i class="fas fa-rocket mr-2"></i>VOIR LES WORKOUTS
             </a>
           </div>
         </div>
