@@ -245,12 +245,41 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-black border-t border-red-500/20 py-12 px-6 mt-20">
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-        <p class="text-gray-600">&copy; 2024 IRONFORGE. Forge your legend.</p>
-        <div class="flex gap-6 text-sm">
-          <a href="/pages/workouts/index.html" class="text-gray-500 hover:text-red-500 transition font-bold uppercase">Workouts</a>
-          <a href="/pages/faq.html" class="text-gray-500 hover:text-red-500 transition font-bold uppercase">FAQ</a>
+    <footer class="relative bg-black overflow-hidden mt-20">
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute inset-0 bg-gradient-to-t from-red-500/5 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-red-500/10 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-64 h-64 bg-red-500/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+      </div>
+      <div class="relative z-10 border-t border-red-500/20">
+        <div class="max-w-7xl mx-auto px-6 py-12">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+            <a href="/" class="flex items-center text-2xl font-black group">
+              <i class="fas fa-fire text-red-500 mr-2 group-hover:animate-pulse"></i>
+              <span class="gradient-text-red">IRONFORGE</span>
+            </a>
+            <div class="flex flex-wrap justify-center gap-8">
+              <a href="/pages/workouts/index.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase text-sm">Workouts</a>
+              <a href="/pages/blog.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase text-sm">Blog</a>
+              <a href="/pages/about.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase text-sm">About</a>
+              <a href="/pages/faq.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase text-sm">FAQ</a>
+            </div>
+            <div class="flex gap-3">
+              <a href="#" class="w-10 h-10 bg-gray-900 border border-red-500/30 rounded-lg flex items-center justify-center hover:border-red-500 hover:bg-red-500/20 transition-all">
+                <i class="fab fa-instagram text-gray-400 hover:text-red-500"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-gray-900 border border-red-500/30 rounded-lg flex items-center justify-center hover:border-red-500 hover:bg-red-500/20 transition-all">
+                <i class="fab fa-youtube text-gray-400 hover:text-red-500"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-gray-900 border border-red-500/30 rounded-lg flex items-center justify-center hover:border-red-500 hover:bg-red-500/20 transition-all">
+                <i class="fab fa-discord text-gray-400 hover:text-red-500"></i>
+              </a>
+            </div>
+          </div>
+          <div class="border-t border-red-500/10 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-600">
+            <p>&copy; 2024 IRONFORGE. Tous droits réservés.</p>
+            <p class="flex items-center gap-2">Built with <i class="fas fa-fire text-red-500 animate-pulse"></i> and sweat</p>
+          </div>
         </div>
       </div>
     </footer>

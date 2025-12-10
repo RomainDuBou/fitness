@@ -8,6 +8,27 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="/assets/css/main.css" />
+    <style>
+      .faq-item .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+      }
+      .faq-item.active .faq-answer {
+        max-height: 500px;
+        padding-top: 1.5rem;
+      }
+      .faq-item.active .faq-icon {
+        transform: rotate(45deg);
+      }
+      .category-card:hover .category-icon {
+        transform: scale(1.1) rotate(5deg);
+      }
+      .glow-line {
+        background: linear-gradient(90deg, transparent, #dc2626, transparent);
+        height: 1px;
+      }
+    </style>
   </head>
   <body class="bg-black text-white">
     <nav class="fixed w-full top-0 z-50" id="navbar">
@@ -31,120 +52,514 @@
       </div>
     </nav>
 
-    <main class="pt-32 pb-16 px-6">
-      <section class="max-w-5xl mx-auto">
-        <div class="text-center mb-16 fade-in-up">
-          <h1 class="text-6xl md:text-8xl font-black mb-4">
-            <span class="gradient-text-red glitch" data-text="FAQ">FAQ</span>
-          </h1>
-          <p class="text-xl text-gray-400">Toutes les réponses pour démarrer votre transformation</p>
+    <!-- Hero Section with Background -->
+    <header class="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&h=1080&fit=crop" 
+             alt="Gym" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black"></div>
+      </div>
+      
+      <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
+        <div class="inline-flex items-center gap-2 bg-red-500/20 border border-red-500/50 rounded-full px-6 py-2 mb-8 fade-in-up">
+          <i class="fas fa-question-circle text-red-500"></i>
+          <span class="text-sm font-bold uppercase tracking-wider">Centre d'aide</span>
+        </div>
+        
+        <h1 class="text-6xl md:text-8xl font-black mb-6 fade-in-up" style="animation-delay: 0.1s">
+          QUESTIONS <span class="gradient-text-red glitch" data-text="FRÉQUENTES">FRÉQUENTES</span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-10 fade-in-up" style="animation-delay: 0.2s">
+          Tout ce que tu dois savoir pour commencer ta transformation. 
+          <span class="text-white font-bold">Pas d'excuses, que des réponses.</span>
+        </p>
+
+        <!-- Quick Stats -->
+        <div class="flex flex-wrap justify-center gap-8 fade-in-up" style="animation-delay: 0.3s">
+          <div class="text-center">
+            <div class="text-4xl font-black text-red-500">24h</div>
+            <div class="text-sm text-gray-500 uppercase tracking-wider">Temps de réponse</div>
+          </div>
+          <div class="w-px h-12 bg-red-500/30 hidden sm:block"></div>
+          <div class="text-center">
+            <div class="text-4xl font-black text-red-500">98%</div>
+            <div class="text-sm text-gray-500 uppercase tracking-wider">Satisfaction</div>
+          </div>
+          <div class="w-px h-12 bg-red-500/30 hidden sm:block"></div>
+          <div class="text-center">
+            <div class="text-4xl font-black text-red-500">15K+</div>
+            <div class="text-sm text-gray-500 uppercase tracking-wider">Questions résolues</div>
+          </div>
+        </div>
+      </div>
+
+      </header>
+
+    <main class="pb-16 px-6">
+      <!-- Category Cards -->
+      <section class="max-w-6xl mx-auto -mt-16 relative z-20 mb-20">
+        <div class="grid md:grid-cols-4 gap-4">
+          <a href="#getting-started" class="category-card group bg-gradient-to-br from-gray-900 to-black border border-red-500/20 rounded-xl p-6 text-center hover:border-red-500/60 transition-all duration-300 fade-in-up">
+            <div class="category-icon w-16 h-16 mx-auto mb-4 bg-red-500/10 rounded-xl flex items-center justify-center transition-transform duration-300">
+              <i class="fas fa-rocket text-red-500 text-2xl"></i>
+            </div>
+            <h3 class="font-bold uppercase text-sm">Démarrage</h3>
+            <p class="text-xs text-gray-500 mt-1">Premiers pas</p>
+          </a>
+          
+          <a href="#training" class="category-card group bg-gradient-to-br from-gray-900 to-black border border-red-500/20 rounded-xl p-6 text-center hover:border-red-500/60 transition-all duration-300 fade-in-up" style="animation-delay: 0.1s">
+            <div class="category-icon w-16 h-16 mx-auto mb-4 bg-red-500/10 rounded-xl flex items-center justify-center transition-transform duration-300">
+              <i class="fas fa-dumbbell text-red-500 text-2xl"></i>
+            </div>
+            <h3 class="font-bold uppercase text-sm">Entraînement</h3>
+            <p class="text-xs text-gray-500 mt-1">Workouts & programmes</p>
+          </a>
+          
+          <a href="#results" class="category-card group bg-gradient-to-br from-gray-900 to-black border border-red-500/20 rounded-xl p-6 text-center hover:border-red-500/60 transition-all duration-300 fade-in-up" style="animation-delay: 0.2s">
+            <div class="category-icon w-16 h-16 mx-auto mb-4 bg-red-500/10 rounded-xl flex items-center justify-center transition-transform duration-300">
+              <i class="fas fa-chart-line text-red-500 text-2xl"></i>
+            </div>
+            <h3 class="font-bold uppercase text-sm">Résultats</h3>
+            <p class="text-xs text-gray-500 mt-1">Progression & objectifs</p>
+          </a>
+          
+          <a href="#technical" class="category-card group bg-gradient-to-br from-gray-900 to-black border border-red-500/20 rounded-xl p-6 text-center hover:border-red-500/60 transition-all duration-300 fade-in-up" style="animation-delay: 0.3s">
+            <div class="category-icon w-16 h-16 mx-auto mb-4 bg-red-500/10 rounded-xl flex items-center justify-center transition-transform duration-300">
+              <i class="fas fa-cog text-red-500 text-2xl"></i>
+            </div>
+            <h3 class="font-bold uppercase text-sm">Technique</h3>
+            <p class="text-xs text-gray-500 mt-1">App & fonctionnalités</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- FAQ Sections -->
+      <section class="max-w-4xl mx-auto">
+        
+        <!-- Getting Started Section -->
+        <div id="getting-started" class="mb-16 scroll-mt-32">
+          <div class="flex items-center gap-4 mb-8 fade-in-up">
+            <div class="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center">
+              <i class="fas fa-rocket text-white text-xl"></i>
+            </div>
+            <div>
+              <h2 class="text-3xl font-black uppercase">Démarrage</h2>
+              <p class="text-gray-500 text-sm">Tout pour bien commencer</p>
+            </div>
+          </div>
+          
+          <div class="space-y-4">
+            <div class="faq-item bg-gradient-to-r from-gray-900/80 to-black border border-red-500/20 rounded-xl overflow-hidden fade-in-up">
+              <button class="faq-trigger w-full text-left p-6 flex items-center gap-4 group">
+                <div class="w-10 h-10 bg-red-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-tools text-red-500"></i>
+                </div>
+                <h3 class="flex-1 text-lg font-bold">Ai-je besoin de matériel pour commencer ?</h3>
+                <i class="faq-icon fas fa-plus text-red-500 transition-transform duration-300"></i>
+              </button>
+              <div class="faq-answer px-6 pb-6">
+                <div class="pl-14 border-l-2 border-red-500/30">
+                  <p class="text-gray-400 leading-relaxed">
+                    <span class="text-white font-semibold">Non, pas forcément !</span> Plus de 60% de nos workouts sont réalisables sans équipement. 
+                    Pour les programmes de force, tu auras besoin d'accès à une salle avec barres et haltères.
+                  </p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-xs font-bold">
+                      <i class="fas fa-check mr-1"></i>Poids du corps
+                    </span>
+                    <span class="bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full text-xs font-bold">
+                      <i class="fas fa-dumbbell mr-1"></i>Élastiques
+                    </span>
+                    <span class="bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-xs font-bold">
+                      <i class="fas fa-weight-hanging mr-1"></i>Kettlebell
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="faq-item bg-gradient-to-r from-gray-900/80 to-black border border-red-500/20 rounded-xl overflow-hidden fade-in-up" style="animation-delay: 0.1s">
+              <button class="faq-trigger w-full text-left p-6 flex items-center gap-4 group">
+                <div class="w-10 h-10 bg-red-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-user-graduate text-red-500"></i>
+                </div>
+                <h3 class="flex-1 text-lg font-bold">Les programmes sont-ils adaptés aux débutants ?</h3>
+                <i class="faq-icon fas fa-plus text-red-500 transition-transform duration-300"></i>
+              </button>
+              <div class="faq-answer px-6 pb-6">
+                <div class="pl-14 border-l-2 border-red-500/30">
+                  <p class="text-gray-400 leading-relaxed">
+                    <span class="text-white font-semibold">Absolument.</span> Chaque programme propose 3 niveaux de difficulté. 
+                    Les vidéos montrent les progressions et régressions de chaque exercice.
+                  </p>
+                  <div class="mt-4 grid grid-cols-3 gap-3">
+                    <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-3 text-center">
+                      <i class="fas fa-seedling text-green-500 text-xl mb-2"></i>
+                      <p class="text-xs font-bold text-green-400">DÉBUTANT</p>
+                    </div>
+                    <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-3 text-center">
+                      <i class="fas fa-fire text-yellow-500 text-xl mb-2"></i>
+                      <p class="text-xs font-bold text-yellow-400">INTERMÉDIAIRE</p>
+                    </div>
+                    <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-3 text-center">
+                      <i class="fas fa-skull text-red-500 text-xl mb-2"></i>
+                      <p class="text-xs font-bold text-red-400">AVANCÉ</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="space-y-6">
-          <!-- Question 1 -->
-          <div class="card-dark rounded-xl p-6 fade-in-up">
-            <button class="w-full text-left flex justify-between items-center group">
-              <h3 class="text-xl font-black uppercase">Ai-je besoin de matériel ?</h3>
-              <i class="fas fa-chevron-down text-red-500 group-hover:rotate-180 transition-transform"></i>
-            </button>
-            <p class="text-gray-400 mt-4">
-              Pour 60% des workouts, non. Les programmes de force nécessitent accès à une salle avec barres et haltères. 
-              Nous proposons toujours des alternatives sans matériel ou avec équipement minimal (élastiques, kettlebell).
-            </p>
-          </div>
+        <!-- Glow Line Separator -->
+        <div class="glow-line w-full my-12"></div>
 
-          <!-- Question 2 -->
-          <div class="card-dark rounded-xl p-6 fade-in-up" style="animation-delay: 0.1s">
-            <button class="w-full text-left flex justify-between items-center group">
-              <h3 class="text-xl font-black uppercase">Combien de temps avant de voir des résultats ?</h3>
-              <i class="fas fa-chevron-down text-red-500 group-hover:rotate-180 transition-transform"></i>
-            </button>
-            <p class="text-gray-400 mt-4">
-              Premières améliorations de force : 2-3 semaines. Changements physiques visibles : 4-6 semaines. 
-              Transformation complète : 12-16 semaines. Tout dépend de votre assiduité et nutrition.
-            </p>
+        <!-- Training Section -->
+        <div id="training" class="mb-16 scroll-mt-32">
+          <div class="flex items-center gap-4 mb-8 fade-in-up">
+            <div class="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center">
+              <i class="fas fa-dumbbell text-white text-xl"></i>
+            </div>
+            <div>
+              <h2 class="text-3xl font-black uppercase">Entraînement</h2>
+              <p class="text-gray-500 text-sm">Workouts et programmes</p>
+            </div>
           </div>
+          
+          <div class="space-y-4">
+            <div class="faq-item bg-gradient-to-r from-gray-900/80 to-black border border-red-500/20 rounded-xl overflow-hidden fade-in-up">
+              <button class="faq-trigger w-full text-left p-6 flex items-center gap-4 group">
+                <div class="w-10 h-10 bg-red-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-layer-group text-red-500"></i>
+                </div>
+                <h3 class="flex-1 text-lg font-bold">Puis-je combiner plusieurs programmes ?</h3>
+                <i class="faq-icon fas fa-plus text-red-500 transition-transform duration-300"></i>
+              </button>
+              <div class="faq-answer px-6 pb-6">
+                <div class="pl-14 border-l-2 border-red-500/30">
+                  <p class="text-gray-400 leading-relaxed">
+                    <span class="text-red-400 font-semibold"><i class="fas fa-exclamation-triangle mr-1"></i>Non recommandé.</span> 
+                    Nos programmes sont conçus pour optimiser récupération et progression. 
+                    Mixer les programmes augmente le risque de surentraînement.
+                  </p>
+                  <div class="mt-4 bg-red-500/10 border border-red-500/30 rounded-lg p-4">
+                    <p class="text-sm text-red-300">
+                      <i class="fas fa-lightbulb mr-2"></i>
+                      <strong>Pro tip:</strong> Termine un programme complet avant d'en commencer un autre pour des résultats optimaux.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-          <!-- Question 3 -->
-          <div class="card-dark rounded-xl p-6 fade-in-up" style="animation-delay: 0.2s">
-            <button class="w-full text-left flex justify-between items-center group">
-              <h3 class="text-xl font-black uppercase">Les programmes sont-ils adaptés aux débutants ?</h3>
-              <i class="fas fa-chevron-down text-red-500 group-hover:rotate-180 transition-transform"></i>
-            </button>
-            <p class="text-gray-400 mt-4">
-              Oui. Chaque programme propose 3 niveaux de difficulté. Les vidéos montrent les progressions et régressions 
-              de chaque exercice. Commencez doucement, la constance prime sur l'intensité.
-            </p>
+            <div class="faq-item bg-gradient-to-r from-gray-900/80 to-black border border-red-500/20 rounded-xl overflow-hidden fade-in-up" style="animation-delay: 0.1s">
+              <button class="faq-trigger w-full text-left p-6 flex items-center gap-4 group">
+                <div class="w-10 h-10 bg-red-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-clock text-red-500"></i>
+                </div>
+                <h3 class="flex-1 text-lg font-bold">Combien de temps dure une séance ?</h3>
+                <i class="faq-icon fas fa-plus text-red-500 transition-transform duration-300"></i>
+              </button>
+              <div class="faq-answer px-6 pb-6">
+                <div class="pl-14 border-l-2 border-red-500/30">
+                  <p class="text-gray-400 leading-relaxed mb-4">
+                    Nos workouts varient de <span class="text-white font-semibold">15 à 60 minutes</span> selon tes objectifs et ton niveau.
+                  </p>
+                  <div class="grid grid-cols-3 gap-3 text-center">
+                    <div class="bg-black/50 rounded-lg p-3">
+                      <div class="text-2xl font-black text-green-500">15-25</div>
+                      <div class="text-xs text-gray-500">min • Express</div>
+                    </div>
+                    <div class="bg-black/50 rounded-lg p-3">
+                      <div class="text-2xl font-black text-yellow-500">30-45</div>
+                      <div class="text-xs text-gray-500">min • Standard</div>
+                    </div>
+                    <div class="bg-black/50 rounded-lg p-3">
+                      <div class="text-2xl font-black text-red-500">50-60</div>
+                      <div class="text-xs text-gray-500">min • Intense</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
 
-          <!-- Question 4 -->
-          <div class="card-dark rounded-xl p-6 fade-in-up" style="animation-delay: 0.3s">
-            <button class="w-full text-left flex justify-between items-center group">
-              <h3 class="text-xl font-black uppercase">Puis-je combiner plusieurs programmes ?</h3>
-              <i class="fas fa-chevron-down text-red-500 group-hover:rotate-180 transition-transform"></i>
-            </button>
-            <p class="text-gray-400 mt-4">
-              Non recommandé. Nos programmes sont conçus pour optimiser récupération et progression. 
-              Mixer les programmes augmente le risque de surentraînement et diminue les résultats.
-            </p>
+        <!-- Glow Line Separator -->
+        <div class="glow-line w-full my-12"></div>
+
+        <!-- Results Section -->
+        <div id="results" class="mb-16 scroll-mt-32">
+          <div class="flex items-center gap-4 mb-8 fade-in-up">
+            <div class="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center">
+              <i class="fas fa-chart-line text-white text-xl"></i>
+            </div>
+            <div>
+              <h2 class="text-3xl font-black uppercase">Résultats</h2>
+              <p class="text-gray-500 text-sm">Progression et objectifs</p>
+            </div>
           </div>
+          
+          <div class="space-y-4">
+            <div class="faq-item bg-gradient-to-r from-gray-900/80 to-black border border-red-500/20 rounded-xl overflow-hidden fade-in-up">
+              <button class="faq-trigger w-full text-left p-6 flex items-center gap-4 group">
+                <div class="w-10 h-10 bg-red-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-calendar-check text-red-500"></i>
+                </div>
+                <h3 class="flex-1 text-lg font-bold">Combien de temps avant de voir des résultats ?</h3>
+                <i class="faq-icon fas fa-plus text-red-500 transition-transform duration-300"></i>
+              </button>
+              <div class="faq-answer px-6 pb-6">
+                <div class="pl-14 border-l-2 border-red-500/30">
+                  <p class="text-gray-400 leading-relaxed mb-4">
+                    Tout dépend de ton assiduité et ta nutrition. Voici une timeline réaliste :
+                  </p>
+                  <div class="relative">
+                    <!-- Timeline -->
+                    <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-green-500 via-yellow-500 to-red-500"></div>
+                    <div class="space-y-4 ml-10">
+                      <div class="relative">
+                        <div class="absolute -left-8 w-4 h-4 bg-green-500 rounded-full border-2 border-black"></div>
+                        <div class="bg-green-500/10 rounded-lg p-3">
+                          <span class="text-green-400 font-bold">2-3 semaines</span>
+                          <p class="text-sm text-gray-400">Premières améliorations de force</p>
+                        </div>
+                      </div>
+                      <div class="relative">
+                        <div class="absolute -left-8 w-4 h-4 bg-yellow-500 rounded-full border-2 border-black"></div>
+                        <div class="bg-yellow-500/10 rounded-lg p-3">
+                          <span class="text-yellow-400 font-bold">4-6 semaines</span>
+                          <p class="text-sm text-gray-400">Changements physiques visibles</p>
+                        </div>
+                      </div>
+                      <div class="relative">
+                        <div class="absolute -left-8 w-4 h-4 bg-red-500 rounded-full border-2 border-black"></div>
+                        <div class="bg-red-500/10 rounded-lg p-3">
+                          <span class="text-red-400 font-bold">12-16 semaines</span>
+                          <p class="text-sm text-gray-400">Transformation complète</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-          <!-- Question 5 -->
-          <div class="card-dark rounded-xl p-6 fade-in-up" style="animation-delay: 0.4s">
-            <button class="w-full text-left flex justify-between items-center group">
-              <h3 class="text-xl font-black uppercase">Comment fonctionne la garantie résultats ?</h3>
-              <i class="fas fa-chevron-down text-red-500 group-hover:rotate-180 transition-transform"></i>
-            </button>
-            <p class="text-gray-400 mt-4">
-              Simple : suivez le programme pendant 30 jours, documentez vos séances (photos/vidéos), respectez le plan. 
-              Si aucun progrès mesurable, remboursement intégral. Aucune question posée.
-            </p>
+            <div class="faq-item bg-gradient-to-r from-gray-900/80 to-black border border-red-500/20 rounded-xl overflow-hidden fade-in-up" style="animation-delay: 0.1s">
+              <button class="faq-trigger w-full text-left p-6 flex items-center gap-4 group">
+                <div class="w-10 h-10 bg-red-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-shield-alt text-red-500"></i>
+                </div>
+                <h3 class="flex-1 text-lg font-bold">Comment fonctionne la garantie résultats ?</h3>
+                <i class="faq-icon fas fa-plus text-red-500 transition-transform duration-300"></i>
+              </button>
+              <div class="faq-answer px-6 pb-6">
+                <div class="pl-14 border-l-2 border-red-500/30">
+                  <p class="text-gray-400 leading-relaxed mb-4">
+                    <span class="text-white font-semibold">Simple et sans risque.</span> On croit en nos programmes à 100%.
+                  </p>
+                  <div class="bg-gradient-to-r from-red-500/20 to-transparent border border-red-500/30 rounded-lg p-4">
+                    <div class="flex items-start gap-3">
+                      <i class="fas fa-check-circle text-green-500 text-xl mt-1"></i>
+                      <div>
+                        <p class="font-bold text-white">Garantie 30 jours</p>
+                        <p class="text-sm text-gray-400">Suis le programme, documente tes séances. Si aucun progrès mesurable, remboursement intégral. <span class="text-red-400 font-semibold">Aucune question posée.</span></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
 
-          <!-- Question 6 -->
-          <div class="card-dark rounded-xl p-6 fade-in-up" style="animation-delay: 0.5s">
-            <button class="w-full text-left flex justify-between items-center group">
-              <h3 class="text-xl font-black uppercase">Les vidéos sont-elles téléchargeables ?</h3>
-              <i class="fas fa-chevron-down text-red-500 group-hover:rotate-180 transition-transform"></i>
-            </button>
-            <p class="text-gray-400 mt-4">
-              Oui. Accès streaming illimité + téléchargement HD pour utilisation offline. 
-              Application mobile disponible iOS/Android pour emporter vos workouts partout.
-            </p>
+        <!-- Glow Line Separator -->
+        <div class="glow-line w-full my-12"></div>
+
+        <!-- Technical Section -->
+        <div id="technical" class="mb-16 scroll-mt-32">
+          <div class="flex items-center gap-4 mb-8 fade-in-up">
+            <div class="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center">
+              <i class="fas fa-cog text-white text-xl"></i>
+            </div>
+            <div>
+              <h2 class="text-3xl font-black uppercase">Technique</h2>
+              <p class="text-gray-500 text-sm">App et fonctionnalités</p>
+            </div>
+          </div>
+          
+          <div class="space-y-4">
+            <div class="faq-item bg-gradient-to-r from-gray-900/80 to-black border border-red-500/20 rounded-xl overflow-hidden fade-in-up">
+              <button class="faq-trigger w-full text-left p-6 flex items-center gap-4 group">
+                <div class="w-10 h-10 bg-red-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-download text-red-500"></i>
+                </div>
+                <h3 class="flex-1 text-lg font-bold">Les vidéos sont-elles téléchargeables ?</h3>
+                <i class="faq-icon fas fa-plus text-red-500 transition-transform duration-300"></i>
+              </button>
+              <div class="faq-answer px-6 pb-6">
+                <div class="pl-14 border-l-2 border-red-500/30">
+                  <p class="text-gray-400 leading-relaxed mb-4">
+                    <span class="text-white font-semibold">Oui, streaming illimité + téléchargement HD.</span>
+                  </p>
+                  <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-black/50 rounded-lg p-4 flex items-center gap-3">
+                      <i class="fab fa-apple text-white text-2xl"></i>
+                      <div>
+                        <p class="font-bold text-sm">iOS App</p>
+                        <p class="text-xs text-gray-500">iPhone & iPad</p>
+                      </div>
+                    </div>
+                    <div class="bg-black/50 rounded-lg p-4 flex items-center gap-3">
+                      <i class="fab fa-android text-green-500 text-2xl"></i>
+                      <div>
+                        <p class="font-bold text-sm">Android App</p>
+                        <p class="text-xs text-gray-500">Tous appareils</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item bg-gradient-to-r from-gray-900/80 to-black border border-red-500/20 rounded-xl overflow-hidden fade-in-up" style="animation-delay: 0.1s">
+              <button class="faq-trigger w-full text-left p-6 flex items-center gap-4 group">
+                <div class="w-10 h-10 bg-red-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-wifi text-red-500"></i>
+                </div>
+                <h3 class="flex-1 text-lg font-bold">Puis-je utiliser l'app hors connexion ?</h3>
+                <i class="faq-icon fas fa-plus text-red-500 transition-transform duration-300"></i>
+              </button>
+              <div class="faq-answer px-6 pb-6">
+                <div class="pl-14 border-l-2 border-red-500/30">
+                  <p class="text-gray-400 leading-relaxed">
+                    <span class="text-white font-semibold">Absolument.</span> Télécharge tes workouts en avance et entraîne-toi 
+                    n'importe où : salle, parc, hôtel, ou même en pleine montagne. 
+                    <span class="text-red-400">Aucune excuse n'est valide.</span>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Contact Section -->
-      <section id="contact" class="max-w-4xl mx-auto mt-20">
-        <div class="gradient-bg-red rounded-xl p-10 text-center fade-in-up">
-          <h3 class="text-4xl font-black mb-4 uppercase">Encore des questions ?</h3>
-          <p class="text-white/80 mb-8 text-lg">
-            Notre équipe de warriors répond sous 24h. Aucune question stupide, seulement des excuses stupides.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a class="bg-black text-white px-8 py-4 rounded font-bold hover:bg-gray-900 transition" href="mailto:support@ironforge.com">
-              <i class="fas fa-envelope mr-2"></i>EMAIL SUPPORT
-            </a>
-            <a class="bg-black text-white px-8 py-4 rounded font-bold hover:bg-gray-900 transition" href="#">
-              <i class="fab fa-discord mr-2"></i>DISCORD COMMUNITY
-            </a>
+      <!-- Contact Section - Enhanced -->
+      <section id="contact" class="max-w-5xl mx-auto mt-20">
+        <div class="relative overflow-hidden rounded-2xl">
+          <!-- Background Image -->
+          <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1200&h=600&fit=crop" 
+                 alt="Gym" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/70"></div>
+          </div>
+          
+          <div class="relative z-10 p-10 md:p-16 flex flex-col md:flex-row items-center gap-10">
+            <div class="flex-1">
+              <div class="inline-flex items-center gap-2 bg-red-500/20 border border-red-500/50 rounded-full px-4 py-1 mb-4">
+                <i class="fas fa-headset text-red-500"></i>
+                <span class="text-xs font-bold uppercase">Support 24/7</span>
+              </div>
+              <h3 class="text-4xl md:text-5xl font-black mb-4 uppercase">
+                Encore des <span class="gradient-text-red">questions</span> ?
+              </h3>
+              <p class="text-gray-400 text-lg mb-2">
+                Notre équipe de warriors répond sous 24h.
+              </p>
+              <p class="text-red-400 font-bold">
+                Aucune question stupide, seulement des excuses stupides.
+              </p>
+            </div>
+            
+            <div class="flex flex-col gap-4 w-full md:w-auto">
+              <a class="group flex items-center gap-4 bg-black/80 hover:bg-red-500 border border-red-500/50 hover:border-red-500 px-8 py-5 rounded-xl font-bold transition-all duration-300" 
+                 href="mailto:support@ironforge.com">
+                <div class="w-12 h-12 bg-red-500/20 group-hover:bg-white/20 rounded-lg flex items-center justify-center transition">
+                  <i class="fas fa-envelope text-red-500 group-hover:text-white text-xl transition"></i>
+                </div>
+                <div>
+                  <span class="block text-sm text-gray-400 group-hover:text-white/80 transition">Email</span>
+                  <span class="text-white">support@ironforge.com</span>
+                </div>
+              </a>
+              
+              <a class="group flex items-center gap-4 bg-black/80 hover:bg-[#5865F2] border border-[#5865F2]/50 hover:border-[#5865F2] px-8 py-5 rounded-xl font-bold transition-all duration-300" 
+                 href="#">
+                <div class="w-12 h-12 bg-[#5865F2]/20 group-hover:bg-white/20 rounded-lg flex items-center justify-center transition">
+                  <i class="fab fa-discord text-[#5865F2] group-hover:text-white text-xl transition"></i>
+                </div>
+                <div>
+                  <span class="block text-sm text-gray-400 group-hover:text-white/80 transition">Discord</span>
+                  <span class="text-white">Rejoindre la communauté</span>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-black border-t border-red-500/20 py-12 px-6 mt-20">
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-        <p class="text-gray-600">&copy; 2024 IRONFORGE. Forge your legend.</p>
-        <div class="flex gap-6 text-sm">
-          <a href="/pages/workouts/index.html" class="text-gray-500 hover:text-red-500 transition font-bold uppercase">Workouts</a>
-          <a href="/pages/about.html" class="text-gray-500 hover:text-red-500 transition font-bold uppercase">About</a>
+    <footer class="relative bg-black overflow-hidden mt-20">
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute inset-0 bg-gradient-to-t from-red-500/5 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-red-500/10 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-64 h-64 bg-red-500/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+      </div>
+      <div class="relative z-10 border-t border-red-500/20">
+        <div class="max-w-7xl mx-auto px-6 py-12">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+            <a href="/" class="flex items-center text-2xl font-black group">
+              <i class="fas fa-fire text-red-500 mr-2 group-hover:animate-pulse"></i>
+              <span class="gradient-text-red">IRONFORGE</span>
+            </a>
+            <div class="flex flex-wrap justify-center gap-8">
+              <a href="/pages/workouts/index.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase text-sm">Workouts</a>
+              <a href="/pages/blog.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase text-sm">Blog</a>
+              <a href="/pages/about.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase text-sm">About</a>
+              <a href="/pages/faq.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase text-sm">FAQ</a>
+            </div>
+            <div class="flex gap-3">
+              <a href="#" class="w-10 h-10 bg-gray-900 border border-red-500/30 rounded-lg flex items-center justify-center hover:border-red-500 hover:bg-red-500/20 transition-all">
+                <i class="fab fa-instagram text-gray-400 hover:text-red-500"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-gray-900 border border-red-500/30 rounded-lg flex items-center justify-center hover:border-red-500 hover:bg-red-500/20 transition-all">
+                <i class="fab fa-youtube text-gray-400 hover:text-red-500"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-gray-900 border border-red-500/30 rounded-lg flex items-center justify-center hover:border-red-500 hover:bg-red-500/20 transition-all">
+                <i class="fab fa-discord text-gray-400 hover:text-red-500"></i>
+              </a>
+            </div>
+          </div>
+          <div class="border-t border-red-500/10 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-600">
+            <p>&copy; 2024 IRONFORGE. Tous droits réservés.</p>
+            <p class="flex items-center gap-2">Built with <i class="fas fa-fire text-red-500 animate-pulse"></i> and sweat</p>
+          </div>
         </div>
       </div>
     </footer>
 
     <script src="/assets/js/main.js"></script>
+    <script>
+      // FAQ Accordion functionality
+      document.querySelectorAll('.faq-trigger').forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          const item = trigger.closest('.faq-item');
+          const wasActive = item.classList.contains('active');
+          
+          // Close all others
+          document.querySelectorAll('.faq-item').forEach(faq => {
+            faq.classList.remove('active');
+          });
+          
+          // Toggle current
+          if (!wasActive) {
+            item.classList.add('active');
+          }
+        });
+      });
+    </script>
   </body>
 </html>

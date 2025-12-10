@@ -415,53 +415,181 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black border-t border-red-500/20 py-12 px-6">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-4 gap-8 mb-8">
-          <div>
-            <div class="text-3xl font-bold mb-4">
-              <i class="fas fa-fire text-red-500 mr-2"></i>
-              <span class="gradient-text-red">IRONFORGE</span>
+    <footer class="relative bg-black overflow-hidden">
+      <!-- Background Effects -->
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute inset-0 bg-gradient-to-t from-red-500/5 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-red-500/10 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-red-500/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+      </div>
+
+      <div class="relative z-10">
+        <!-- Main Footer Content -->
+        <div class="max-w-7xl mx-auto px-6 pt-20 pb-12">
+          <div class="grid lg:grid-cols-12 gap-12 mb-16">
+            <!-- Brand Section -->
+            <div class="lg:col-span-4">
+              <a href="/" class="inline-flex items-center text-4xl font-black mb-6 group">
+                <i class="fas fa-fire text-red-500 mr-3 group-hover:animate-pulse"></i>
+                <span class="gradient-text-red">IRONFORGE</span>
+              </a>
+              <p class="text-gray-400 text-lg mb-6 leading-relaxed">
+                Forge ton corps. Forge ton mental.<br>
+                <span class="text-white font-bold">Deviens légendaire.</span>
+              </p>
+              <!-- Social Links -->
+              <div class="flex gap-3">
+                <a href="#" class="group w-12 h-12 bg-gradient-to-br from-gray-900 to-black border border-red-500/30 rounded-xl flex items-center justify-center hover:border-red-500 hover:bg-red-500/20 transition-all duration-300">
+                  <i class="fab fa-instagram text-xl text-gray-400 group-hover:text-red-500 transition"></i>
+                </a>
+                <a href="#" class="group w-12 h-12 bg-gradient-to-br from-gray-900 to-black border border-red-500/30 rounded-xl flex items-center justify-center hover:border-red-500 hover:bg-red-500/20 transition-all duration-300">
+                  <i class="fab fa-youtube text-xl text-gray-400 group-hover:text-red-500 transition"></i>
+                </a>
+                <a href="#" class="group w-12 h-12 bg-gradient-to-br from-gray-900 to-black border border-red-500/30 rounded-xl flex items-center justify-center hover:border-red-500 hover:bg-red-500/20 transition-all duration-300">
+                  <i class="fab fa-tiktok text-xl text-gray-400 group-hover:text-red-500 transition"></i>
+                </a>
+                <a href="#" class="group w-12 h-12 bg-gradient-to-br from-gray-900 to-black border border-red-500/30 rounded-xl flex items-center justify-center hover:border-[#5865F2] hover:bg-[#5865F2]/20 transition-all duration-300">
+                  <i class="fab fa-discord text-xl text-gray-400 group-hover:text-[#5865F2] transition"></i>
+                </a>
+              </div>
             </div>
-            <p class="text-gray-500">Forgez votre légende.</p>
-            <div class="flex gap-4 mt-4">
-              <a href="#" class="w-10 h-10 bg-red-500/20 rounded flex items-center justify-center hover:bg-red-500 transition">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="#" class="w-10 h-10 bg-red-500/20 rounded flex items-center justify-center hover:bg-red-500 transition">
-                <i class="fab fa-youtube"></i>
-              </a>
-              <a href="#" class="w-10 h-10 bg-red-500/20 rounded flex items-center justify-center hover:bg-red-500 transition">
-                <i class="fab fa-tiktok"></i>
-              </a>
+
+            <!-- Links Sections -->
+            <div class="lg:col-span-8 grid sm:grid-cols-3 gap-8">
+              <!-- Training -->
+              <div>
+                <h4 class="text-sm font-black uppercase tracking-wider text-white mb-6 flex items-center gap-2">
+                  <span class="w-8 h-0.5 bg-red-500"></span>
+                  Training
+                </h4>
+                <ul class="space-y-4">
+                  <li>
+                    <a href="/pages/workouts/index.html" class="group flex items-center gap-2 text-gray-400 hover:text-white transition">
+                      <i class="fas fa-chevron-right text-xs text-red-500 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"></i>
+                      <span>Tous les Workouts</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/pages/workouts/index.html" class="group flex items-center gap-2 text-gray-400 hover:text-white transition">
+                      <i class="fas fa-chevron-right text-xs text-red-500 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"></i>
+                      <span>HIIT & Cardio</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/pages/workouts/index.html" class="group flex items-center gap-2 text-gray-400 hover:text-white transition">
+                      <i class="fas fa-chevron-right text-xs text-red-500 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"></i>
+                      <span>Musculation</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/pages/workouts/index.html" class="group flex items-center gap-2 text-gray-400 hover:text-white transition">
+                      <i class="fas fa-chevron-right text-xs text-red-500 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"></i>
+                      <span>Force & Power</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Resources -->
+              <div>
+                <h4 class="text-sm font-black uppercase tracking-wider text-white mb-6 flex items-center gap-2">
+                  <span class="w-8 h-0.5 bg-red-500"></span>
+                  Ressources
+                </h4>
+                <ul class="space-y-4">
+                  <li>
+                    <a href="/pages/blog.html" class="group flex items-center gap-2 text-gray-400 hover:text-white transition">
+                      <i class="fas fa-chevron-right text-xs text-red-500 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"></i>
+                      <span>Blog</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/pages/faq.html" class="group flex items-center gap-2 text-gray-400 hover:text-white transition">
+                      <i class="fas fa-chevron-right text-xs text-red-500 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"></i>
+                      <span>FAQ</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/pages/about.html" class="group flex items-center gap-2 text-gray-400 hover:text-white transition">
+                      <i class="fas fa-chevron-right text-xs text-red-500 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"></i>
+                      <span>À propos</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="group flex items-center gap-2 text-gray-400 hover:text-white transition">
+                      <i class="fas fa-chevron-right text-xs text-red-500 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"></i>
+                      <span>Guides gratuits</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Contact -->
+              <div>
+                <h4 class="text-sm font-black uppercase tracking-wider text-white mb-6 flex items-center gap-2">
+                  <span class="w-8 h-0.5 bg-red-500"></span>
+                  Contact
+                </h4>
+                <ul class="space-y-4">
+                  <li>
+                    <a href="mailto:support@ironforge.com" class="flex items-center gap-3 text-gray-400 hover:text-white transition">
+                      <i class="fas fa-envelope text-red-500"></i>
+                      <span>support@ironforge.com</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center gap-3 text-gray-400 hover:text-white transition">
+                      <i class="fab fa-discord text-red-500"></i>
+                      <span>Discord Community</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex items-center gap-3 text-gray-400 hover:text-white transition">
+                      <i class="fas fa-map-marker-alt text-red-500"></i>
+                      <span>Paris, France</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div>
-            <h4 class="font-bold mb-4 text-red-500 uppercase">Training</h4>
-            <ul class="space-y-2 text-gray-500">
-              <li><a href="/pages/workouts/index.html" class="hover:text-red-500 transition">Workouts</a></li>
-              <li><a href="#" class="hover:text-red-500 transition">Coaching</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-bold mb-4 text-red-500 uppercase">Company</h4>
-            <ul class="space-y-2 text-gray-500">
-              <li><a href="/pages/about.html" class="hover:text-red-500 transition">About</a></li>
-              <li><a href="#" class="hover:text-red-500 transition">Blog</a></li>
-              <li><a href="#" class="hover:text-red-500 transition">Careers</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="font-bold mb-4 text-red-500 uppercase">Support</h4>
-            <ul class="space-y-2 text-gray-500">
-              <li><a href="/pages/faq.html" class="hover:text-red-500 transition">FAQ</a></li>
-              <li><a href="/pages/faq.html#contact" class="hover:text-red-500 transition">Contact</a></li>
-              <li><a href="#" class="hover:text-red-500 transition">Terms</a></li>
-            </ul>
+
+          <!-- Newsletter -->
+          <div class="bg-gradient-to-r from-red-500/10 via-red-500/5 to-transparent border border-red-500/20 rounded-2xl p-8 mb-12">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <h4 class="text-2xl font-black uppercase mb-2">Rejoins la forge</h4>
+                <p class="text-gray-400">Reçois des workouts exclusifs et des conseils de pros.</p>
+              </div>
+              <div class="flex w-full md:w-auto">
+                <input type="email" placeholder="ton@email.com" 
+                       class="flex-1 md:w-72 bg-black border border-red-500/30 rounded-l-xl px-6 py-4 text-white placeholder-gray-600 focus:outline-none focus:border-red-500 transition" />
+                <button class="bg-red-500 hover:bg-red-600 text-white font-bold px-8 py-4 rounded-r-xl transition flex items-center gap-2">
+                  <span class="hidden sm:inline">S'INSCRIRE</span>
+                  <i class="fas fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="border-t border-red-500/20 pt-8 text-center text-gray-600">
-          <p>&copy; 2024 IRONFORGE. All rights reserved. Built with <i class="fas fa-fire text-red-500"></i> and sweat.</p>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-red-500/20">
+          <div class="max-w-7xl mx-auto px-6 py-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+              <p class="text-gray-600 text-sm">
+                &copy; 2024 IRONFORGE. Tous droits réservés.
+              </p>
+              <div class="flex items-center gap-6 text-sm">
+                <a href="#" class="text-gray-600 hover:text-red-500 transition">Mentions légales</a>
+                <a href="#" class="text-gray-600 hover:text-red-500 transition">Confidentialité</a>
+                <a href="#" class="text-gray-600 hover:text-red-500 transition">CGV</a>
+              </div>
+              <p class="text-gray-600 text-sm flex items-center gap-2">
+                Built with <i class="fas fa-fire text-red-500 animate-pulse"></i> and sweat
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

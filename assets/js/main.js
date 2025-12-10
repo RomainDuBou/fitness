@@ -213,6 +213,17 @@ const initWorkoutsListing = async () => {
     .filter(Boolean)
     .forEach((el) => el.addEventListener('input', applyFilters));
 
+  // Random workout button
+  const randomBtn = document.getElementById('random-workout-btn');
+  if (randomBtn) {
+    randomBtn.addEventListener('click', () => {
+      if (workouts.length > 0) {
+        const randomWorkout = workouts[Math.floor(Math.random() * workouts.length)];
+        window.location.href = `/pages/workouts/detail.html?id=${randomWorkout.id}`;
+      }
+    });
+  }
+
   renderWorkouts(workouts, grid);
   enableAnimationsObserver();
 };
