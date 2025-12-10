@@ -21,6 +21,7 @@
             <a href="#hero" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">Home</a>
             <a href="/pages/workouts/index.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">Workouts</a>
             <a href="/pages/programs.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">Programs</a>
+            <a href="/pages/blog.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">Blog</a>
             <a href="/pages/about.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">About</a>
             <a href="/pages/faq.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">FAQ</a>
             <a class="btn-primary px-6 py-2 rounded font-bold" href="/pages/programs.html">START NOW</a>
@@ -58,8 +59,9 @@
         
       </div>
       
-      <!-- Floating badges - positioned outside main content -->
-      <div class="absolute top-32 right-4 xl:right-20 bg-black/80 backdrop-blur-lg rounded-xl p-4 border border-red-500/30 floating hidden xl:block">
+      <!-- Floating badges - 4 corners -->
+      <!-- Top Right -->
+      <div class="absolute top-28 right-4 xl:right-16 bg-black/80 backdrop-blur-lg rounded-xl p-4 border border-red-500/30 floating hidden xl:block">
         <div class="flex items-center gap-3">
           <i class="fas fa-fire text-red-500 text-2xl"></i>
           <div class="text-left">
@@ -69,12 +71,35 @@
         </div>
       </div>
       
-      <div class="absolute bottom-32 left-4 xl:left-20 bg-black/80 backdrop-blur-lg rounded-xl p-4 border border-red-500/30 floating hidden xl:block" style="animation-delay: 1s">
+      <!-- Top Left -->
+      <div class="absolute top-28 left-4 xl:left-16 bg-black/80 backdrop-blur-lg rounded-xl p-4 border border-red-500/30 floating hidden xl:block" style="animation-delay: 0.5s">
+        <div class="flex items-center gap-3">
+          <i class="fas fa-users text-red-500 text-2xl"></i>
+          <div class="text-left">
+            <p class="text-xs text-gray-500 uppercase">Active Now</p>
+            <p class="text-2xl font-black">1,247</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Bottom Left -->
+      <div class="absolute bottom-28 left-4 xl:left-16 bg-black/80 backdrop-blur-lg rounded-xl p-4 border border-red-500/30 floating hidden xl:block" style="animation-delay: 1s">
         <div class="flex items-center gap-3">
           <i class="fas fa-trophy text-red-500 text-2xl"></i>
           <div class="text-left">
             <p class="text-xs text-gray-500 uppercase">PR This Week</p>
             <p class="text-2xl font-black">+15 kg</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Bottom Right -->
+      <div class="absolute bottom-28 right-4 xl:right-16 bg-black/80 backdrop-blur-lg rounded-xl p-4 border border-red-500/30 floating hidden xl:block" style="animation-delay: 1.5s">
+        <div class="flex items-center gap-3">
+          <i class="fas fa-bolt text-red-500 text-2xl"></i>
+          <div class="text-left">
+            <p class="text-xs text-gray-500 uppercase">Streak</p>
+            <p class="text-2xl font-black">42 days</p>
           </div>
         </div>
       </div>

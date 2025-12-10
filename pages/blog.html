@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - IRONFORGE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+  <body class="bg-black text-white">
+    <nav class="fixed w-full top-0 z-50" id="navbar">
+      <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <a href="/" class="text-3xl font-bold flex items-center group">
+            <i class="fas fa-fire text-red-500 mr-2 group-hover:animate-pulse"></i>
+            <span class="gradient-text-red">IRONFORGE</span>
+          </a>
+          <div class="hidden md:flex items-center space-x-8" id="navbar-links">
+            <a href="/" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">Home</a>
+            <a href="/pages/workouts/index.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">Workouts</a>
+            <a href="/pages/programs.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">Programs</a>
+            <a href="/pages/blog.html" class="text-red-500 font-bold uppercase tracking-wide text-sm">Blog</a>
+            <a href="/pages/about.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">About</a>
+            <a href="/pages/faq.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">FAQ</a>
+            <a class="btn-primary px-6 py-2 rounded font-bold" href="/pages/programs.html">START NOW</a>
+          </div>
+          <button id="menu-toggle" class="md:hidden text-red-500 text-2xl">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="pt-32 pb-16 px-6">
+      <!-- Hero -->
+      <section class="max-w-7xl mx-auto mb-16">
+        <div class="text-center fade-in-up">
+          <h1 class="text-6xl md:text-8xl font-black mb-4">
+            THE <span class="gradient-text-red glitch" data-text="FORGE">FORGE</span> BLOG
+          </h1>
+          <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+            Conseils d'entraînement, science du muscle, mindset de champion. Tout ce qu'il faut pour devenir une machine.
+          </p>
+        </div>
+      </section>
+
+      <!-- Featured Article -->
+      <section class="max-w-7xl mx-auto mb-16">
+        <div class="card-dark rounded-2xl overflow-hidden fade-in-up">
+          <div class="grid md:grid-cols-2">
+            <div class="h-64 md:h-auto">
+              <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800&h=600&fit=crop" 
+                   alt="Featured" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-8 md:p-12 flex flex-col justify-center">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="bg-red-500 text-black px-3 py-1 rounded font-bold text-xs uppercase">Featured</span>
+                <span class="text-gray-500 text-sm">12 Dec 2024</span>
+              </div>
+              <h2 class="text-3xl md:text-4xl font-black uppercase mb-4">
+                Les 5 Secrets des Athlètes Elite pour Exploser vos PRs
+              </h2>
+              <p class="text-gray-400 mb-6">
+                Découvrez les techniques utilisées par les champions pour repousser leurs limites et battre leurs records personnels. Mindset, nutrition, récupération...
+              </p>
+              <a href="#" class="btn-primary px-6 py-3 rounded font-bold inline-block w-fit">
+                LIRE L'ARTICLE <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Categories -->
+      <section class="max-w-7xl mx-auto mb-12">
+        <div class="flex flex-wrap gap-4 justify-center">
+          <button class="bg-red-500 text-black px-6 py-3 rounded font-bold uppercase text-sm">Tous</button>
+          <button class="bg-gray-900 text-gray-400 px-6 py-3 rounded font-bold uppercase text-sm hover:bg-red-500 hover:text-black transition">Entraînement</button>
+          <button class="bg-gray-900 text-gray-400 px-6 py-3 rounded font-bold uppercase text-sm hover:bg-red-500 hover:text-black transition">Mindset</button>
+          <button class="bg-gray-900 text-gray-400 px-6 py-3 rounded font-bold uppercase text-sm hover:bg-red-500 hover:text-black transition">Récupération</button>
+          <button class="bg-gray-900 text-gray-400 px-6 py-3 rounded font-bold uppercase text-sm hover:bg-red-500 hover:text-black transition">Science</button>
+        </div>
+      </section>
+
+      <!-- Articles Grid -->
+      <section class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Article 1 -->
+          <article class="card-dark rounded-xl overflow-hidden fade-in-up">
+            <div class="h-48 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=400&fit=crop" 
+                   alt="Article" class="w-full h-full object-cover hover:scale-110 transition duration-500" />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded text-xs font-bold uppercase">Entraînement</span>
+                <span class="text-gray-600 text-xs">8 Dec 2024</span>
+              </div>
+              <h3 class="text-xl font-black uppercase mb-3">Progressive Overload : Le Guide Ultime</h3>
+              <p class="text-gray-400 text-sm mb-4">
+                Comment augmenter systématiquement vos charges pour maximiser vos gains musculaires...
+              </p>
+              <a href="#" class="text-red-500 font-bold text-sm hover:text-red-400 transition">
+                LIRE LA SUITE <i class="fas fa-arrow-right ml-1"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="card-dark rounded-xl overflow-hidden fade-in-up" style="animation-delay: 0.1s">
+            <div class="h-48 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&h=400&fit=crop" 
+                   alt="Article" class="w-full h-full object-cover hover:scale-110 transition duration-500" />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded text-xs font-bold uppercase">Mindset</span>
+                <span class="text-gray-600 text-xs">5 Dec 2024</span>
+              </div>
+              <h3 class="text-xl font-black uppercase mb-3">Mental de Champion : Vaincre la Flemme</h3>
+              <p class="text-gray-400 text-sm mb-4">
+                Les techniques psychologiques pour rester motivé même quand tout vous pousse à abandonner...
+              </p>
+              <a href="#" class="text-red-500 font-bold text-sm hover:text-red-400 transition">
+                LIRE LA SUITE <i class="fas fa-arrow-right ml-1"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="card-dark rounded-xl overflow-hidden fade-in-up" style="animation-delay: 0.2s">
+            <div class="h-48 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&h=400&fit=crop" 
+                   alt="Article" class="w-full h-full object-cover hover:scale-110 transition duration-500" />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="bg-green-500/20 text-green-400 px-2 py-1 rounded text-xs font-bold uppercase">Récupération</span>
+                <span class="text-gray-600 text-xs">2 Dec 2024</span>
+              </div>
+              <h3 class="text-xl font-black uppercase mb-3">Sommeil & Muscle : L'Arme Secrète</h3>
+              <p class="text-gray-400 text-sm mb-4">
+                Pourquoi 8h de sommeil peuvent vous faire gagner plus de muscle que 2h de training en plus...
+              </p>
+              <a href="#" class="text-red-500 font-bold text-sm hover:text-red-400 transition">
+                LIRE LA SUITE <i class="fas fa-arrow-right ml-1"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 4 -->
+          <article class="card-dark rounded-xl overflow-hidden fade-in-up" style="animation-delay: 0.3s">
+            <div class="h-48 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=600&h=400&fit=crop" 
+                   alt="Article" class="w-full h-full object-cover hover:scale-110 transition duration-500" />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded text-xs font-bold uppercase">Science</span>
+                <span class="text-gray-600 text-xs">28 Nov 2024</span>
+              </div>
+              <h3 class="text-xl font-black uppercase mb-3">Hypertrophie : La Science du Volume</h3>
+              <p class="text-gray-400 text-sm mb-4">
+                Combien de séries par semaine pour maximiser la croissance musculaire ? Les études parlent...
+              </p>
+              <a href="#" class="text-red-500 font-bold text-sm hover:text-red-400 transition">
+                LIRE LA SUITE <i class="fas fa-arrow-right ml-1"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 5 -->
+          <article class="card-dark rounded-xl overflow-hidden fade-in-up" style="animation-delay: 0.4s">
+            <div class="h-48 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=600&h=400&fit=crop" 
+                   alt="Article" class="w-full h-full object-cover hover:scale-110 transition duration-500" />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded text-xs font-bold uppercase">Entraînement</span>
+                <span class="text-gray-600 text-xs">25 Nov 2024</span>
+              </div>
+              <h3 class="text-xl font-black uppercase mb-3">HIIT vs LISS : Quel Cardio Choisir ?</h3>
+              <p class="text-gray-400 text-sm mb-4">
+                Haute intensité ou basse intensité ? On décortique les avantages de chaque méthode...
+              </p>
+              <a href="#" class="text-red-500 font-bold text-sm hover:text-red-400 transition">
+                LIRE LA SUITE <i class="fas fa-arrow-right ml-1"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Article 6 -->
+          <article class="card-dark rounded-xl overflow-hidden fade-in-up" style="animation-delay: 0.5s">
+            <div class="h-48 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1532029837206-abbe2b7620e3?w=600&h=400&fit=crop" 
+                   alt="Article" class="w-full h-full object-cover hover:scale-110 transition duration-500" />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded text-xs font-bold uppercase">Mindset</span>
+                <span class="text-gray-600 text-xs">20 Nov 2024</span>
+              </div>
+              <h3 class="text-xl font-black uppercase mb-3">Routine Matinale des Champions</h3>
+              <p class="text-gray-400 text-sm mb-4">
+                Comment les athlètes de haut niveau commencent leur journée pour performer au maximum...
+              </p>
+              <a href="#" class="text-red-500 font-bold text-sm hover:text-red-400 transition">
+                LIRE LA SUITE <i class="fas fa-arrow-right ml-1"></i>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Load More -->
+        <div class="text-center mt-12">
+          <button class="btn-outline px-8 py-4 rounded font-bold">
+            <i class="fas fa-plus mr-2"></i>CHARGER PLUS D'ARTICLES
+          </button>
+        </div>
+      </section>
+
+      <!-- Newsletter -->
+      <section class="max-w-4xl mx-auto mt-20">
+        <div class="gradient-bg-red rounded-2xl p-10 text-center fade-in-up">
+          <i class="fas fa-envelope text-5xl mb-6 opacity-80"></i>
+          <h3 class="text-3xl font-black uppercase mb-4">Rejoins la Newsletter</h3>
+          <p class="text-white/80 mb-8">
+            Reçois chaque semaine nos meilleurs conseils, workouts exclusifs et motivation directement dans ta boîte mail.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+            <input type="email" placeholder="ton@email.com" 
+                   class="flex-1 bg-black/30 border border-white/20 rounded px-6 py-4 text-white placeholder-white/50 focus:outline-none focus:border-white" />
+            <button class="bg-black text-white px-8 py-4 rounded font-bold hover:bg-gray-900 transition">
+              S'ABONNER
+            </button>
+          </div>
+          <p class="text-white/50 text-sm mt-4">
+            <i class="fas fa-lock mr-1"></i> Pas de spam. Désinscription en 1 clic.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-red-500/20 py-12 px-6 mt-20">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-gray-600">&copy; 2024 IRONFORGE. Forge your legend.</p>
+        <div class="flex gap-6 text-sm">
+          <a href="/pages/workouts/index.html" class="text-gray-500 hover:text-red-500 transition font-bold uppercase">Workouts</a>
+          <a href="/pages/faq.html" class="text-gray-500 hover:text-red-500 transition font-bold uppercase">FAQ</a>
+          <a href="/pages/programs.html" class="text-gray-500 hover:text-red-500 transition font-bold uppercase">Programs</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
