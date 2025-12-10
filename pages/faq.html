@@ -34,9 +34,19 @@
     <nav class="fixed w-full top-0 z-50" id="navbar">
       <div class="max-w-7xl mx-auto px-6 py-4">
         <div class="flex justify-between items-center">
-          <a href="/" class="text-3xl font-bold flex items-center group">
-            <i class="fas fa-fire text-red-500 mr-2 group-hover:animate-pulse"></i>
-            <span class="gradient-text-red">IRONFORGE</span>
+          <a href="/" class="flex items-center group">
+            <div class="relative mr-3">
+              <div class="w-10 h-10 bg-gradient-to-br from-red-500 to-red-700 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-red-500/30">
+                <i class="fas fa-dumbbell text-white text-lg transform -rotate-45"></i>
+              </div>
+              <div class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+            </div>
+            <div class="flex flex-col leading-none">
+              <span class="text-2xl font-black tracking-tight">
+                <span class="text-white">IRON</span><span class="text-red-500">FORGE</span>
+              </span>
+              <span class="text-[10px] text-gray-500 uppercase tracking-[0.2em] font-bold">Beast Mode Training</span>
+            </div>
           </a>
           <div class="hidden md:flex items-center space-x-8" id="navbar-links">
             <a href="/" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">Home</a>
