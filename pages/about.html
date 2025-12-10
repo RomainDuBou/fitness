@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - IRONFORGE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+  <body class="bg-black text-white">
+    <nav class="fixed w-full top-0 z-50" id="navbar">
+      <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <a href="/" class="text-3xl font-bold flex items-center group">
+            <i class="fas fa-fire text-red-500 mr-2 group-hover:animate-pulse"></i>
+            <span class="gradient-text-red">IRONFORGE</span>
+          </a>
+          <div class="hidden md:flex items-center space-x-8" id="navbar-links">
+            <a href="/" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">Home</a>
+            <a href="/pages/workouts/index.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">Workouts</a>
+            <a href="/pages/programs.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">Programs</a>
+            <a href="/pages/about.html" class="text-red-500 font-bold uppercase tracking-wide text-sm">About</a>
+            <a href="/pages/faq.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">FAQ</a>
+            <a class="btn-primary px-6 py-2 rounded font-bold" href="/pages/programs.html">START NOW</a>
+          </div>
+          <button id="menu-toggle" class="md:hidden text-red-500 text-2xl">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="pt-32 pb-16 px-6">
+      <!-- Hero -->
+      <section class="max-w-6xl mx-auto mb-20">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="fade-in-up">
+            <h1 class="text-6xl md:text-7xl font-black mb-6">
+              THE <span class="gradient-text-red">IRONFORGE</span> STORY
+            </h1>
+            <p class="text-xl text-gray-400 mb-8">
+              Né dans la douleur. Forgé dans la sueur. Construit pour ceux qui refusent la médiocrité.
+            </p>
+            <p class="text-gray-500 mb-8">
+              IRONFORGE n'est pas qu'une plateforme d'entraînement. C'est une philosophie. Une rébellion contre 
+              la mollesse moderne. Nous croyons que chaque être humain possède un potentiel de guerrier qui ne demande 
+              qu'à être réveillé.
+            </p>
+            <div class="grid grid-cols-2 gap-6">
+              <div class="card-dark rounded-xl p-6">
+                <div class="text-3xl font-black gradient-text-red">2019</div>
+                <p class="text-gray-500 text-sm mt-2">Fondation</p>
+              </div>
+              <div class="card-dark rounded-xl p-6">
+                <div class="text-3xl font-black gradient-text-red">15K+</div>
+                <p class="text-gray-500 text-sm mt-2">Warriors</p>
+              </div>
+            </div>
+          </div>
+          <div class="fade-in-up" style="animation-delay: 0.2s">
+            <div class="relative">
+              <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&h=900&fit=crop" 
+                   alt="Training" class="rounded-xl shadow-2xl" />
+              <div class="absolute -bottom-6 -left-6 bg-black border-2 border-red-500 rounded-xl p-6">
+                <p class="text-2xl font-black gradient-text-red">"NO EXCUSES"</p>
+                <p class="text-gray-500 text-sm">Notre mantra depuis jour 1</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Values -->
+      <section class="max-w-6xl mx-auto mb-20">
+        <h2 class="text-5xl font-black text-center mb-12 uppercase">
+          Core <span class="gradient-text-red">Values</span>
+        </h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="card-dark rounded-xl p-8 text-center scale-in">
+            <div class="w-20 h-20 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+              <i class="fas fa-fist-raised text-red-500 text-3xl"></i>
+            </div>
+            <h3 class="text-2xl font-black mb-4 uppercase">Discipline</h3>
+            <p class="text-gray-400">
+              La motivation est temporaire. La discipline est éternelle. Nous construisons des habitudes, pas des émotions.
+            </p>
+          </div>
+          
+          <div class="card-dark rounded-xl p-8 text-center scale-in" style="animation-delay: 0.1s">
+            <div class="w-20 h-20 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+              <i class="fas fa-skull text-red-500 text-3xl"></i>
+            </div>
+            <h3 class="text-2xl font-black mb-4 uppercase">Intensité</h3>
+            <p class="text-gray-400">
+              Chaque workout est une bataille. Donnez tout ou rentrez chez vous. La zone de confort est l'ennemi.
+            </p>
+          </div>
+          
+          <div class="card-dark rounded-xl p-8 text-center scale-in" style="animation-delay: 0.2s">
+            <div class="w-20 h-20 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+              <i class="fas fa-infinity text-red-500 text-3xl"></i>
+            </div>
+            <h3 class="text-2xl font-black mb-4 uppercase">Progression</h3>
+            <p class="text-gray-400">
+              1% meilleur chaque jour. Les petites victoires créent les grandes transformations. Never settle.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team -->
+      <section class="max-w-6xl mx-auto mb-20">
+        <h2 class="text-5xl font-black text-center mb-12 uppercase">
+          The <span class="gradient-text-red">Architects</span>
+        </h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center fade-in-up">
+            <img src="https://i.pravatar.cc/300?img=11" alt="Coach" 
+                 class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500" />
+            <h3 class="text-xl font-black uppercase">Marcus Steel</h3>
+            <p class="text-red-500 text-sm mb-2">HEAD COACH</p>
+            <p class="text-gray-500 text-sm">Ex-Marine. Powerlifting champion. 20 ans d'expérience.</p>
+          </div>
+          
+          <div class="text-center fade-in-up" style="animation-delay: 0.1s">
+            <img src="https://i.pravatar.cc/300?img=5" alt="Coach" 
+                 class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500" />
+            <h3 class="text-xl font-black uppercase">Sarah Vega</h3>
+            <p class="text-red-500 text-sm mb-2">HIIT SPECIALIST</p>
+            <p class="text-gray-500 text-sm">CrossFit Games athlete. Spécialiste métabolique.</p>
+          </div>
+          
+          <div class="text-center fade-in-up" style="animation-delay: 0.2s">
+            <img src="https://i.pravatar.cc/300?img=7" alt="Coach" 
+                 class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500" />
+            <h3 class="text-xl font-black uppercase">Viktor Drago</h3>
+            <p class="text-red-500 text-sm mb-2">STRENGTH COACH</p>
+            <p class="text-gray-500 text-sm">Olympic lifter. Record 250kg squat. Beast mode.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="max-w-4xl mx-auto">
+        <div class="gradient-bg-red rounded-xl p-12 text-center fade-in-up">
+          <h2 class="text-5xl font-black mb-6 uppercase">Join The Legion</h2>
+          <p class="text-white/80 text-xl mb-8">
+            15,000+ warriors ont déjà commencé leur transformation. Qu'attendez-vous ?
+          </p>
+          <a class="bg-black text-white px-10 py-5 rounded text-xl font-bold inline-block hover:bg-gray-900 transition" 
+             href="/pages/programs.html">
+            START YOUR JOURNEY
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-red-500/20 py-12 px-6 mt-20">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-gray-600">&copy; 2024 IRONFORGE. Forge your legend.</p>
+        <div class="flex gap-6 text-sm">
+          <a href="/pages/workouts/index.html" class="text-gray-500 hover:text-red-500 transition font-bold uppercase">Workouts</a>
+          <a href="/pages/faq.html" class="text-gray-500 hover:text-red-500 transition font-bold uppercase">FAQ</a>
+          <a href="/pages/programs.html" class="text-gray-500 hover:text-red-500 transition font-bold uppercase">Programs</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

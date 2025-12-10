@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workout - IRONFORGE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+  <body class="bg-black text-white">
+    <nav class="fixed w-full top-0 z-50" id="navbar">
+      <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <a href="/" class="text-3xl font-bold flex items-center group">
+            <i class="fas fa-fire text-red-500 mr-2 group-hover:animate-pulse"></i>
+            <span class="gradient-text-red">IRONFORGE</span>
+          </a>
+          <div class="hidden md:flex items-center space-x-8" id="navbar-links">
+            <a href="/" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">Home</a>
+            <a href="/pages/workouts/index.html" class="text-red-500 font-bold uppercase tracking-wide text-sm">Workouts</a>
+            <a href="/pages/programs.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">Programs</a>
+            <a href="/pages/about.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">About</a>
+            <a href="/pages/faq.html" class="text-gray-400 hover:text-red-500 transition font-bold uppercase tracking-wide text-sm">FAQ</a>
+            <a class="btn-primary px-6 py-2 rounded font-bold" href="/pages/programs.html">START NOW</a>
+          </div>
+          <button id="menu-toggle" class="md:hidden text-red-500 text-2xl">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="pt-32 pb-16 px-6">
+      <section class="max-w-7xl mx-auto">
+        <div class="mb-8">
+          <a href="/pages/workouts/index.html" class="text-red-500 font-bold hover:text-red-400 transition flex items-center text-sm uppercase tracking-wider">
+            <i class="fas fa-chevron-left mr-2"></i>Retour aux workouts
+          </a>
+        </div>
+
+        <!-- Loading State -->
+        <div id="workout-loading" class="text-center py-20">
+          <i class="fas fa-spinner fa-spin text-red-500 text-4xl mb-4"></i>
+          <p class="text-gray-500">Chargement du workout...</p>
+        </div>
+
+        <!-- Workout Detail Content -->
+        <div id="workout-detail" class="hidden"></div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-red-500/20 py-12 px-6 mt-16">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-gray-600">&copy; 2024 IRONFORGE. Forge your legend.</p>
+        <div class="flex gap-6 text-sm">
+          <a href="/pages/faq.html" class="text-gray-500 hover:text-red-500 transition font-bold uppercase">FAQ</a>
+          <a href="/pages/about.html" class="text-gray-500 hover:text-red-500 transition font-bold uppercase">About</a>
+          <a href="/pages/programs.html" class="text-gray-500 hover:text-red-500 transition font-bold uppercase">Programs</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
